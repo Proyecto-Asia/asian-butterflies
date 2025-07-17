@@ -1,13 +1,26 @@
 {
-    "butterfly": [{
-  "id": "1",
-  "name": "La Mariposa cardera",           // Título principal
-  "sciname": "Vanessa cardui",             // Nombre científico
-  "image-url": "https://...",              // URL de la imagen
-  "description": "Una especie cosmopolita...", // Descripción corta
-  "activity": "1",                         // 1 = día, 0 = noche
-  "status": "0",                          // 0 = estable, 1 = vulnerable, 2 = crítico
-  "location": ["Japón", "China"]          // Array de países
-}   
-    ]
+  "butterfly": [
+    {
+      "id": "1",
+      "name": "La Mariposa cardera", // Título principal
+      "sciname": "Vanessa cardui", // Nombre científico
+      "image-url": "https://...", // URL de la imagen
+      "short-description": "Mariposa que habita en regiones tropicales del sur de Asia.",
+      "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
+      "activity": "1", // 1 = día, 0 = noche
+      "status": "0", // 0 = estable, 1 = vulnerable, 2 = crítico
+      "location": ["Japón", "China"] // Array de países
+    },
+    {
+      "id": "2",
+      "name": "La Nia hoja",
+      "sciname": "Arhopala anetta",
+      "image-url": "https://...",
+      "short-description": "Mariposa que habita en regiones tropicales del sur de Asia.",
+      "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
+      "activity": "0",
+      "status": "2",
+      "location": ["India", "Sri Lanka", "Malasia", "Indonesia"]
+    }
+  ]
 }
