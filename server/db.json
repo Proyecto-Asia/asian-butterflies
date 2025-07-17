@@ -1,5 +1,13 @@
 {
-    "butterfly": [
-        
+    "butterfly": [{
+  "id": "1",
+  "name": "La Mariposa cardera",           // Título principal
+  "sciname": "Vanessa cardui",             // Nombre científico
+  "image-url": "https://...",              // URL de la imagen
+  "description": "Una especie cosmopolita...", // Descripción corta
+  "activity": "1",                         // 1 = día, 0 = noche
+  "status": "0",                          // 0 = estable, 1 = vulnerable, 2 = crítico
+  "location": ["Japón", "China"]          // Array de países
+}   
     ]
 }

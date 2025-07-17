@@ -5,6 +5,7 @@ import ButterflyDetail from "../pages/ButterflyDetail";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
+import TestCard from "../pages/TestCard";
 
 const routerButterfly = createBrowserRouter([{
  path :"/",
@@ -29,6 +30,10 @@ const routerButterfly = createBrowserRouter([{
        {
         path: "/contact", 
         element: <Contact/>
+       },
+       {
+        path: "/test-card",
+        element: <TestCard/>
        }
     ]
 
