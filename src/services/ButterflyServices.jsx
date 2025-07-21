@@ -1,11 +1,10 @@
 // Metodo GET para el read
 
-const URL_API = "http://localhost:3000/butterfly";
+  const getAllButterflies = async() =>
+   
 
- const getAllButterflies = async() =>{
-    
-    
-}
+
+
 
 async function getOneButterfly(id) {
         
