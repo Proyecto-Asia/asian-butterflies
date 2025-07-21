@@ -14,7 +14,7 @@ const ButterflyGrid = () => {
     axios
       .get("http://localhost:3000/butterfly")
       .then(function (response) {
-        // Todo bien success
+        // Tutto bien success
         console.log(response);
         const testButterfly = response.data[0];
         setButterfly(testButterfly);
@@ -22,7 +22,7 @@ const ButterflyGrid = () => {
         setLoading(false);
       })
       .catch(function (error) {
-        // Todo mal error
+        // Tutto mal error
         console.log(error);
         setError("Error cargando la mariposa");
         setLoading(false);
