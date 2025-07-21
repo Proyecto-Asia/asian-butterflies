@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+
 
 function ButterflyCard({butterfly}) {
   // Estado para controlar si la imagen se ha cargado
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // const [imageLoaded, setImageLoaded] = useState(false);
 
 
   return (
