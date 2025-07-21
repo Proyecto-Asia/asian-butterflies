@@ -6,13 +6,13 @@ const ButterflyIntro = () => {
     return (
          <>
               <header className="text-center mb-8">
-                <h1 style={{ fontFamily: "var(--font-segoe)" }}
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">Descubre las {" "} <strong className="bg-gradient-to-r from-[#9cc7ab] via-[#abbf60]
+                <h1 
+                  className=" font-segoe text-mint-green-700 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">Descubre las {" "} <strong className="bg-gradient-to-r from-[#9cc7ab] via-[#abbf60]
                to-[#957112] bg-clip-text text-transparent drop-shadow-md"> Mariposas</strong> Asiáticas</h1>
               </header>
               <section
-                style={{ fontFamily: "var(--font-segoe)" }}
-                className="flex flex-col md:flex-row justify-center items-center gap-8 p-8">
+                
+                className=" font-segoe flex flex-col md:flex-row justify-center items-center gap-8 p-8">
                 <div className="flex justify-center items-center">
                   <img src={introbutterflyg} alt="Mariposa asiática" className="max-w-[250px] md:max-w-[400px] lg:max-w-[500px] h-auto animate-flotar" />
                 </div>
