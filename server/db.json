@@ -8,10 +8,8 @@
             "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed quis convallis urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dignissim, justo at pulvinar egestas, nulla nunc condimentum urna, in dictum libero augue id risus. Donec vel sem vel tortor luctus volutpat non eu sapien. Curabitur in arcu nec justo efficitur fermentum. Praesent ut cursus nisl.",
             "activity": "1",
             "status": "estable",
-            "location": [
-                "Japón",
-                "China"
-            ],
+            "region": "Asia del Norte",
+            "location": "Japón",
             "image-url": null
         },
         {
@@ -22,12 +20,8 @@
             "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
             "activity": "1",
             "status": "estable",
-            "location": [
-                "India",
-                "Sri Lanka",
-                "Malasia",
-                "Indonesia"
-            ],
+            "region": "Asia del Norte",
+            "location": "India",
             "image-url": null
         }
     ]
