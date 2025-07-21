@@ -8,7 +8,7 @@ const TestCard = () => {
     "id": "1",
     "name": "La Mariposa cardera",
     "sciname": "Vanessa cardui",
-    "image-url": "https://www.birdsandblooms.com/wp-content/uploads/2022/11/spicebush-swallowtail-butterfly-milkweed.jpg?fit=680%2C454",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Papilio_xuthus_20130804.jpg",
     "description": "Una especie cosmopolita, lo que significa que está presente en todo el mundo.",
     "activity": "1",
     "status": "0",
