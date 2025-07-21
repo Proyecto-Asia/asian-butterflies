@@ -16,9 +16,9 @@ function ButterflyCard({butterfly}) {
       <p>
         {butterfly.shortDescription}
       </p>
-      <h3>📍 location</h3>
-      <h3>status</h3>
-      <h3>activity</h3>
+      <h3>📍 {butterfly.location?.join(", ")}</h3> 
+      <h3>{butterfly.status}</h3>
+      <h3>{butterfly.activity}</h3>
       <button className="w-full bg-olive-green-500 text-white py-3 px-6 rounded-2xl font-medium hover:bg-olive-green-600 transition-colors duration-200">
         Leer más
       </button>
