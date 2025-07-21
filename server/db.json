@@ -1,26 +1,34 @@
 {
-  "butterfly": [
-    {
-      "id": "1",
-      "name": "La Mariposa cardera", // Título principal
-      "sciname": "Vanessa cardui", // Nombre científico
-      "image-url": "https://...", // URL de la imagen
-      "short-description": "Mariposa que habita en regiones tropicales del sur de Asia.",
-      "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
-      "activity": "1", // 1 = día, 0 = noche
-      "status": "0", // 0 = estable, 1 = vulnerable, 2 = crítico
-      "location": ["Japón", "China"] // Array de países
-    },
-    {
-      "id": "2",
-      "name": "La Nia hoja",
-      "sciname": "Arhopala anetta",
-      "image-url": "https://...",
-      "short-description": "Mariposa que habita en regiones tropicales del sur de Asia.",
-      "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
-      "activity": "0",
-      "status": "2",
-      "location": ["India", "Sri Lanka", "Malasia", "Indonesia"]
-    }
-  ]
+    "butterfly": [
+        {
+            "id": "1",
+            "name": "La Mariposa cardera",
+            "sciname": "Vanessa cardui",
+            "short-description": "Una especie cosmopolita, lo que significa que está presente en todo el mundo.",
+            "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed quis convallis urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dignissim, justo at pulvinar egestas, nulla nunc condimentum urna, in dictum libero augue id risus. Donec vel sem vel tortor luctus volutpat non eu sapien. Curabitur in arcu nec justo efficitur fermentum. Praesent ut cursus nisl.",
+            "activity": "1",
+            "status": "estable",
+            "location": [
+                "Japón",
+                "China"
+            ],
+            "image-url": null
+        },
+        {
+            "id": "2",
+            "name": "La Nia hoja",
+            "sciname": "Arhopala anetta",
+            "short-description": "Mariposa que habita en regiones tropicales del sur de Asia.",
+            "long-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
+            "activity": "1",
+            "status": "estable",
+            "location": [
+                "India",
+                "Sri Lanka",
+                "Malasia",
+                "Indonesia"
+            ],
+            "image-url": null
+        }
+    ]
 }
