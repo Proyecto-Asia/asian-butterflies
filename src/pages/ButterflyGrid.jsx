@@ -43,10 +43,10 @@ const ButterflyGrid = () => {
   }
 
   return (
-    <section className="bg-white p-6 mx-6 xl:p-8 xl:mx-20 rounded-2xl shadow-sm mt-8 mb-32">
+    <section className="bg-white p-4 mx-4 sm:p-6 sm:mx-6 xl:p-8 xl:mx-20 rounded-2xl shadow-sm mt-8 mb-32">
       <TitleSection title="Las mariposas en Asia" />
       {/* Grid para mostrar múltiples cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
         {/* map para renderizar cada mariposa */}
         {butterflies.map((butterfly) => (
           <ButterflyCard key={butterfly.id} butterfly={butterfly} />
@@ -54,7 +54,7 @@ const ButterflyGrid = () => {
       </div>
       <div className="flex justify-center my-8">
         <button 
-        className="bg-lime-green border-2 border-mint-green-600 text-mint-green-700 px-6 py-3 rounded-lg font-medium hover:bg-lime-green/80 transition-colors duration-200"
+        className="bg-lime-green border-2 border-mint-green-600 text-mint-green-700 px-6 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-lime-green/80 transition-colors duration-200 text-sm sm:text-base"
         onClick={() => navigate('/newbutterfly')}>
           + Crear nueva
         </button>

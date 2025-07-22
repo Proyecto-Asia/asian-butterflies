@@ -28,7 +28,7 @@ function ButterflyCard({ butterfly }) {
   };
 
   return (
-    <div className="bg-light-green-0 rounded-3xl p-6 max-w-sm mx-auto shadow-lg shadow-light-green-600/30">
+    <div className="bg-light-green-0 rounded-3xl p-4 sm:p-6 max-w-sm mx-auto shadow-lg shadow-light-green-600/30">
       {/* Imagen de la mariposa */}
       <div className="relative mb-6">
         <img
@@ -38,13 +38,13 @@ function ButterflyCard({ butterfly }) {
         />
       </div>
       <h2
-        className="font-bold text-2xl text-mint-green-700"
+        className="font-bold text-xl sm:text-2xl text-mint-green-700"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
       >
         {butterfly.name}
       </h2>
       <h2
-        className="italic text-2xl text-mint-green-700 mb-4"
+        className="italic text-xl sm:text-2xl text-mint-green-700 mb-4"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
       >
         {butterfly.sciname}
@@ -69,20 +69,20 @@ function ButterflyCard({ butterfly }) {
         />
       </div>
       <p
-        className="text-mint-green-700 mb-4"
+        className="text-mint-green-700 mb-4 text-sm sm:text-base"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
       >
         {butterfly.shortDescription}
       </p>
       <h3
-        className="pb-6 text-lg text-mint-green-700 mb-4"
+        className="pb-4 sm:pb-6 text-base sm:text-lg text-mint-green-700 mb-4"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
       >
         📍 {butterfly.location}
       </h3>
 
       <button
-        className="mx-auto block bg-light-green-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-mint-green-700 transition-colors duration-200 font-['Segoe_UI']"
+        className="mx-auto block bg-light-green-600 text-white py-3 px-6 sm:py-3 sm:px-6 rounded-lg font-medium hover:bg-mint-green-700 transition-colors duration-200 text-sm sm:text-base font-['Segoe_UI']"
         onClick={() => navigate(`/butterflydetails/${butterfly.id}`)}
       >
         Leer más
