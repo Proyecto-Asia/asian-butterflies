@@ -7,10 +7,13 @@ const Layout = () => {
   return (
 
     <>
-      <NavBar />
+      <body className="bg-mint-green-0 min-h-full" >
+        <NavBar />
 
-      <Outlet />
-      <FooterBar />
+        <Outlet />
+        <FooterBar />
+      </body>
+
     </>
   )
 }
