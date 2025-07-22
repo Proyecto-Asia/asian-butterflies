@@ -4,7 +4,7 @@ import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard
 
 const ButterflyGrid = () => {
   // useSTATE
-  const [butterfly, setButterfly] = useState(null);
+  const [butterflies, setButterflies] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,8 +16,7 @@ const ButterflyGrid = () => {
       .then(function (response) {
         // Tutto bien success
         console.log(response);
-        const testButterfly = response.data[0];
-        setButterfly(testButterfly);
+        setButterflies(response.data); //guardamos todo el array
         setError(null);
         setLoading(false);
       })
@@ -38,14 +37,21 @@ const ButterflyGrid = () => {
     return <div>Error: {error} 🤦🏻‍♀️</div>;
   }
 
-  if (!butterfly) {
-    return <div>No hay mariposa 😢</div>;
+  if (!butterflies || butterflies.length === 0) {
+    return <div>No hay mariposas 😢</div>;
   }
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-sm mx-auto">
-        <ButterflyCard butterfly={butterfly} />
+      {/* Cambié a grid para mostrar múltiples cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Aquí está el map para renderizar cada mariposa */}
+        {butterflies.map((butterfly) => (
+          <ButterflyCard 
+            key={butterfly.id} 
+            butterfly={butterfly} 
+          />
+        ))}
       </div>
     </div>
   );
