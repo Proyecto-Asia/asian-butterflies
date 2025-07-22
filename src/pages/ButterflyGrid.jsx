@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard";
 import { getAllButterflies } from "../services/ButterflyServices"; // ← Importa el servicio
+import TitleSection from "../components/TitleSection";
 
 const ButterflyGrid = () => {
   // useSTATE
@@ -40,7 +41,8 @@ const ButterflyGrid = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+     <section className="bg-white p-6 mx-6 xl:p-8 xl:mx-20 rounded-2xl shadow-sm mt-8 mb-32">
+      <TitleSection title="Las mariposas en Asia"/>
       {/* Grid para mostrar múltiples cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {/* map para renderizar cada mariposa */}
@@ -48,7 +50,7 @@ const ButterflyGrid = () => {
           <ButterflyCard key={butterfly.id} butterfly={butterfly} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
