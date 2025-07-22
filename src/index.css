@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/animation-intro.css";
 
 @theme {
     --color-light-green: #c9dfb3;
