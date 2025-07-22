@@ -1,16 +1,3 @@
-// Metodo GET para el read
+import axios from 'axios'; // De esta forma activamos axios 
 
-const URL_API = "http://localhost:3000/butterfly";
 
- const getAllButterflies = async() =>{
-    
-    
-}
-
-async function getOneButterfly(id) {
-        
-
-    }
-// Metodo POST para el create
-// Metodo PUT para actualizar
-// MEtodo DELETE para eliminar
