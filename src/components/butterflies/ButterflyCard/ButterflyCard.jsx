@@ -55,7 +55,7 @@ function ButterflyCard({ butterfly }) {
       <p className="text-mint-green-700 mb-4" style={{fontFamily: 'Segoe UI, sans-serif'}}>{butterfly.shortDescription}</p>
       <h3 className="pb-6 text-lg text-mint-green-700 mb-4" style={{fontFamily: 'Segoe UI, sans-serif'}}>📍 {butterfly.location?.join(", ")}</h3>
 
-<button className="mx-auto block bg-light-green-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-mint-green-700 transition-colors duration-200 font-['Segoe_UI']">
+<button className="mx-auto block bg-light-green-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-mint-green-700 transition-colors duration-200 font-['Segoe_UI']" Link to={/butterflydetails/${bfly.id}} >
   Leer más
 </button>
     </div>
