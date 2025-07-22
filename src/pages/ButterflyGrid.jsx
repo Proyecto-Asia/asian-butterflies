@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard";
+import { getAllButterflies } from "../services/ButterflyServices"; // ← Importa el servicio
 
 const ButterflyGrid = () => {
   // useSTATE
-  const [butterflies, setButterflies] = useState(null);
+  const [butterflies, setButterflies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    // Traer la info de tu JSON - Método Get
-    axios
-      .get("http://localhost:3000/butterfly")
-      .then(function (response) {
-        // Tutto bien success
-        console.log(response);
-        setButterflies(response.data); //guardamos todo el array
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const butterflyData = await getAllButterflies();
+        setButterflies(butterflyData);
         setError(null);
+      } catch (error) {
+        console.error('Error:', error);
+        setError("Error cargando las mariposas");
+      } finally {
         setLoading(false);
-      })
-      .catch(function (error) {
-        // Tutto mal error
-        console.log(error);
-        setError("Error cargando la mariposa");
-        setLoading(false);
-      });
-  }, []); // ← Esto es lo CLAVE: array vacío para que solo se ejecute una vez
-  
+      }
+    };
+    
+    fetchData();
+  }, []); // cuando se monta, se ejecuta. Es la CLAVE: array vacío para que solo se ejecute una vez
+
   // gestionar qué hacer si hay error
   if (loading) {
     return <div>Cargando mariposa... 🦋</div>;
@@ -43,14 +41,11 @@ const ButterflyGrid = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      {/* Cambié a grid para mostrar múltiples cards */}
+      {/* Grid para mostrar múltiples cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {/* Aquí está el map para renderizar cada mariposa */}
+        {/* map para renderizar cada mariposa */}
         {butterflies.map((butterfly) => (
-          <ButterflyCard 
-            key={butterfly.id} 
-            butterfly={butterfly} 
-          />
+          <ButterflyCard key={butterfly.id} butterfly={butterfly} />
         ))}
       </div>
     </div>
