@@ -2,27 +2,87 @@
     "butterfly": [
         {
             "id": "1",
-            "name": "La Mariposa cardera",
-            "sciname": "Vanessa cardui",
-            "shortDescription": "Una especie cosmopolita, lo que significa que está presente en todo el mundo.",
-            "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Sed quis convallis urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dignissim, justo at pulvinar egestas, nulla nunc condimentum urna, in dictum libero augue id risus. Donec vel sem vel tortor luctus volutpat non eu sapien. Curabitur in arcu nec justo efficitur fermentum. Praesent ut cursus nisl.",
+            "name": "Mariposa Cola de Golondrina Jade",
+            "sciname": "Papilio palinurus",
+            "shortDescription": "Mariposa espectacular con alas verdes iridiscentes que brilla como una esmeralda al sol.",
+            "longDescription": "La Papilio palinurus es una de las mariposas más hermosas del sudeste asiático. Sus alas posteriores presentan un verde metálico brillante con bandas negras que crean un efecto iridiscente único. Esta especie prefiere las áreas forestales tropicales donde se alimenta del néctar de diversas flores. Los machos son territoriales y a menudo se les ve patrullando su área en busca de hembras. Su vuelo es rápido y errático, lo que les ayuda a escapar de los depredadores.",
+            "activity": "1",
+            "status": "1",
+            "region": "Sudeste Asiático",
+            "location": "Malasia",
+            "imageUrl": "https://www.publicdomainpictures.net/pictures/270000/velka/swallowtail-butterfly-1535402230kBD.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Mariposa Emperador Púrpura",
+            "sciname": "Apatura iris",
+            "shortDescription": "Elegante mariposa con reflejos púrpuras que habita en bosques caducifolios de Asia Oriental.",
+            "longDescription": "El Emperador Púrpura es conocido por su vuelo majestuoso y sus colores cambiantes. Los machos muestran un brillo púrpura intenso en sus alas cuando la luz los toca en el ángulo correcto. Prefieren alimentarse de savia de árboles fermentada, frutas podridas y ocasionalmente de excrementos, más que de flores. Son mariposas de dosel, pasando la mayor parte del tiempo en las copas de los árboles. Las hembras son más grandes y carecen del brillo púrpura de los machos.",
             "activity": "1",
             "status": "0",
             "region": "Asia Oriental",
             "location": "Japón",
-            "imageUrl": "https://cdn.britannica.com/76/151376-050-13586FE2/monarch-butterfly-flowers-bush.jpg"
+            "imageUrl": "https://i.pinimg.com/originals/19/c0/2b/19c02bfeac54a22feaf25f3dd51932d7.jpg"
         },
         {
-            "id": "2",
-            "name": "La Nia hoja",
-            "sciname": "Arhopala anetta",
-            "shortDescription": "Mariposa que habita en regiones tropicales del sur de Asia.",
-            "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus in orci cursus convallis. Praesent vulputate, justo a dapibus fringilla, libero urna facilisis metus, nec tincidunt erat urna eget augue.",
-            "activity": "1",
+            "id": "3",
+            "name": "Mariposa Atlas",
+            "sciname": "Attacus atlas",
+            "shortDescription": "Una de las mariposas más grandes del mundo, con alas que pueden alcanzar 28 cm de envergadura.",
+            "longDescription": "La Mariposa Atlas es verdaderamente gigantesca y una de las especies más impresionantes de Asia. Sus alas presentan patrones complejos que incluyen 'ventanas' transparentes y diseños que imitan la cabeza de una serpiente en las puntas de las alas para disuadir a los depredadores. Los adultos no se alimentan y viven solo de las reservas acumuladas durante su etapa de oruga. Su ciclo de vida completo dura aproximadamente dos meses. Las orugas se alimentan de una gran variedad de plantas y pueden crecer hasta 12 cm de longitud.",
+            "activity": "0",
             "status": "0",
+            "region": "Sudeste Asiático",
+            "location": "Tailandia",
+            "imageUrl": "https://i.pinimg.com/originals/b4/a3/0c/b4a30c93ae6f957123805eb052f519f5.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Mariposa Azul de Bengala",
+            "sciname": "Lycaenidae bengalensis",
+            "shortDescription": "Pequeña mariposa de color azul brillante endémica de las regiones montañosas de Asia del Sur.",
+            "longDescription": "Esta diminuta joya azul es una especie endémica de las colinas de Bengala y regiones cercanas. A pesar de su pequeño tamaño, sus alas azul metálico la hacen fácilmente reconocible. Prefiere áreas con abundante vegetación y fuentes de agua cercanas. Las orugas tienen una relación simbiótica única con ciertas especies de hormigas, que las protegen a cambio de secreciones dulces. Los adultos se alimentan principalmente del néctar de flores pequeñas y son activos durante las horas más cálidas del día.",
+            "activity": "1",
+            "status": "2",
             "region": "Asia del Sur",
             "location": "India",
-            "imageUrl": "https://cdn.pixabay.com/photo/2023/05/30/15/12/blue-butterfuly-8028888_1280.jpg"
+            "imageUrl": "https://hablemosdeinsectos.com/wp-content/uploads/2017/08/mariposa-azul-1-1024x768.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Mariposa Hoja Seca",
+            "sciname": "Kallima paralekta",
+            "shortDescription": "Maestra del camuflaje, sus alas cerradas imitan perfectamente una hoja seca marchita.",
+            "longDescription": "La Kallima paralekta es famosa por su extraordinario mimetismo. Cuando cierra sus alas, se vuelve prácticamente invisible al imitar una hoja seca caída, completa con 'nervaduras', manchas marrones y hasta agujeros simulados causados por insectos. Esta adaptación evolutiva la protege eficazmente de depredadores visuales. En contraste, el interior de sus alas muestra colores brillantes naranjas y azules. Habita en bosques tropicales húmedos donde se alimenta de frutas fermentadas y raramente visita flores.",
+            "activity": "1",
+            "status": "1",
+            "region": "Sudeste Asiático",
+            "location": "Myanmar",
+            "imageUrl": "https://www.planetnatural.com/wp-content/uploads/2023/05/Dead-Leaves-Butterfly-compressed.jpg"
+        },
+        {
+            "id": "6",
+            "name": "Mariposa Tigre del Himalaya",
+            "sciname": "Danaus chrysippus himalayana",
+            "shortDescription": "Subespecie resistente que migra a través de las altas montañas del Himalaya.",
+            "longDescription": "Esta notable subespecie ha adaptado su comportamiento migratorio para navegar las condiciones extremas del Himalaya. Sus alas naranjas con bordes negros y puntos blancos la hacen reconocible a grandes distancias. Es conocida por sus increíbles migraciones estacionales, volando a altitudes que pueden superar los 3,000 metros. Se alimenta principalmente de plantas de la familia Asclepiadaceae, que le proporcionan compuestos tóxicos que la hacen desagradable para los depredadores. Su resistencia al frío es excepcional comparada con otras especies tropicales.",
+            "activity": "1",
+            "status": "1",
+            "region": "Asia del Sur",
+            "location": "Nepal",
+            "imageUrl": "https://live.staticflickr.com/65535/50918024782_6b20efc825_b.jpg"
+        },
+        {
+            "id": "7",
+            "name": "Mariposa Lunar China",
+            "sciname": "Actias ningpoensis",
+            "shortDescription": "Mariposa nocturna de color verde pálido con elegantes colas en sus alas posteriores.",
+            "longDescription": "La Actias ningpoensis es una polilla grande y hermosa que emerge solo durante las noches cálidas de primavera y verano. Sus alas verde pálido con intrincados patrones y largas colas la hacen inconfundible. Los machos tienen antenas plumosas más desarrolladas para detectar las feromonas de las hembras desde grandes distancias. Como muchas polillas grandes, los adultos no se alimentan y viven solo unas pocas semanas dedicadas exclusivamente a la reproducción. Las orugas se alimentan de hojas de diversos árboles caducifolios y pasan el invierno como pupas.",
+            "activity": "0",
+            "status": "0",
+            "region": "Asia Oriental",
+            "location": "China",
+            "imageUrl": "https://www.thespruce.com/thmb/XoK9QcIOTWP09yDkYEXIkqzsloE=/2560x0/filters:no_upscale():max_bytes(150000):strip_icc()/85455257-56a709dc5f9b58b7d0e6347e.jpg"
         }
     ]
 }
