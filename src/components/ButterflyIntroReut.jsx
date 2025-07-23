@@ -4,7 +4,7 @@ const ButterflyIntroReut = ({title, image, children}) => {
     return (
          <>
          
-          <section className="bg-white p-6 mx-6 xl:p-6 rounded-2xl xl:mx-50">
+          <section>
             {title && (
               <header className="text-center mb-7 mt-8">
                 <h1 className=" font-segoe text-mint-green-700 text-3xl sm:text-4xl xl:text-5xl font-bold mb-4 px-4">

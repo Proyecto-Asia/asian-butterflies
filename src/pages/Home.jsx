@@ -21,7 +21,7 @@ const Home = () => {
         image={introbutterflyg}
       >
         Las mariposas desempeñan un{" "}
-        <strong className="text-lime-400">papel fundamental como polinizadores.</strong>
+        <strong className="text-lime-green">papel fundamental como polinizadores.</strong>
         <br />
         <br />
         Al buscar néctar para alimentarse, sus grandes alas les ayudan a transferir
@@ -29,7 +29,7 @@ const Home = () => {
         de las flores silvestres.
         <br />
         <br />
-        <strong className="text-lime-400">
+        <strong className="text-lime-green">
           Asia es un continente con una extraordinaria riqueza en diversidad de mariposas diurnas
         </strong>, donde se pueden encontrar más de 500 especies, muchas de ellas destacadas
         por sus vibrantes colores y gráciles formas.
@@ -40,7 +40,7 @@ const Home = () => {
         y la producción de alimentos.
         <br />
         <br />
-        <strong className="text-lime-400">
+        <strong className="text-lime-green">
           El mantenimiento de una amplia variedad de mariposas y otros polinizadores
           es esencial para la salud ambiental y la producción de alimentos.
         </strong>

@@ -2,7 +2,7 @@
 // import introbutterflyg from "../assets/img/intro-butterfly-g.png";
 
 
-// const ButterflyIntro = () => {
+ const ButterflyIntro = () => {
 //     return (
 //          <>
 //               <header className="text-center mb7 mt-8">
