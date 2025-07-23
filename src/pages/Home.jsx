@@ -44,8 +44,7 @@ const Home = () => {
           El mantenimiento de una amplia variedad de mariposas y otros polinizadores
           es esencial para la salud ambiental y la producción de alimentos.
         </strong>
-        {/* <TitleSection title="Mapa de observaciones" />
-        <MapaINaturalist /> */}
+       
 
       </ButterflyIntroReut>
 
