@@ -8,6 +8,23 @@ import iconVulnerable from "../../../assets/img/icon-vulnerable-o.png";
 import iconCritico from "../../../assets/img/icon-critico-o.png";
 
 function ButterflyCard({ butterfly }) {
+  //Funciones helper para Tooltip
+  const getActivityText = (activity) => {
+    return activity === "0" ? "Nocturna" : "Diurna";
+  };
+
+  const getStatusText = (status) => {
+    switch (status) {
+      case "0":
+        return "Estable";
+      case "1":
+        return "Vulnerable";
+      case "2":
+        return "Crítico";
+      default:
+        return "Estable";
+    }
+  };
   // Función para obtener el icono de actividad
   const getActivityIcon = (activity) => {
     return activity === "0" ? iconNoche : iconDia;
@@ -56,24 +73,36 @@ function ButterflyCard({ butterfly }) {
       </p>
       {/* Actividad y Status con ícono */}
       <div className="pb-3 flex gap-3">
-        <img
-          src={butterfly.activity === "0" ? iconNoche : iconDia}
-          alt="Activity icon"
-          className="w-12 h-12"
-        />
-        <img
-          src={
-            butterfly.status === "0"
-              ? iconEstable
-              : butterfly.status === "1"
-              ? iconVulnerable
-              : iconCritico
-          }
-          alt="Status icon"
-          className="w-12 h-12"
-        />
-      </div>
+        <div className="relative group">
+          <img
+            src={butterfly.activity === "0" ? iconNoche : iconDia}
+            alt="Activity icon"
+            className="w-12 h-12 cursor-help"
+          />
+          {/* Tooltip */}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-lime-green text-mint-green-700 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            {getActivityText(butterfly.activity)}
+          </div>
+        </div>
 
+        <div className="relative group">
+          <img
+            src={
+              butterfly.status === "0"
+                ? iconEstable
+                : butterfly.status === "1"
+                ? iconVulnerable
+                : iconCritico
+            }
+            alt="Status icon"
+            className="w-12 h-12 cursor-help"
+          />
+          {/* Tooltip */}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-mustard-yellow text-mint-green-700 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            {getStatusText(butterfly.status)}
+          </div>
+        </div>
+      </div>
       <h3
         className="pb-4 sm:pb-3 text-base sm:text-lg text-mint-green-700 mb-4"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
