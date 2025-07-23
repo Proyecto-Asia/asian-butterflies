@@ -3,7 +3,7 @@ import "../index.css" // aqui ya se importa tailwind
 import ButterflyIntroReut from "../components/ButterflyIntroReut";
 import introbutterflyg from "../assets/img/intro-butterfly-g.png";
 import TitleSection from "../components/TitleSection";
- import MapaINaturalist from "../components/MapaINaturalist";
+import MapaINaturalist from "../components/MapaINaturalist";
 
 
 const Home = () => {
@@ -44,13 +44,15 @@ const Home = () => {
           El mantenimiento de una amplia variedad de mariposas y otros polinizadores
           es esencial para la salud ambiental y la producción de alimentos.
         </strong>
+        {/* <TitleSection title="Mapa de observaciones" />
+        <MapaINaturalist /> */}
 
       </ButterflyIntroReut>
 
-      <TitleSection title="Mapa de observaciones" />
-       <MapaINaturalist/> 
 
- 
+       <TitleSection title="Mapa de observaciones" />
+       <MapaINaturalist/>  
+
 
     </>
 
