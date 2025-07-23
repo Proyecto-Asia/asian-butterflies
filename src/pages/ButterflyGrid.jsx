@@ -3,13 +3,14 @@ import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard
 import { getAllButterflies } from "../services/ButterflyServices"; // ← Importa el servicio
 import TitleSection from "../components/TitleSection";
 import { useNavigate } from "react-router-dom"; // Para el botón de crear nueva
+import Buttons from "../components/Buttons";
 
 const ButterflyGrid = () => {
   // useSTATE
   const [butterflies, setButterflies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,7 +44,7 @@ const ButterflyGrid = () => {
   }
 
   return (
-    <section className="bg-white p-4 mx-4 sm:p-6 sm:mx-6 xl:p-8 xl:mx-20 rounded-2xl shadow-sm mt-8 mb-32">
+    <section >
       <TitleSection title="Las mariposas en Asia" />
       {/* Grid para mostrar múltiples cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
@@ -53,11 +54,12 @@ const ButterflyGrid = () => {
         ))}
       </div>
       <div className="flex justify-center my-8">
-        <button 
-        className="bg-lime-green border-2 border-mint-green-600 text-mint-green-700 px-6 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-lime-green/80 transition-colors duration-200 text-sm sm:text-base"
-        onClick={() => navigate('/newbutterfly')}>
-          + Crear nueva
-        </button>
+        <Buttons
+          styleType="primary"
+          text="+ Crear nueva"
+          className="mt-8 ml-6"
+          linkTo={`/newbutterfly`}
+        />
       </div>
     </section>
   );

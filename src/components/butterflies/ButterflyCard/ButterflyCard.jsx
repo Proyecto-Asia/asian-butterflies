@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Para el botón a la ficha de cada mariposa
-// Importar todas las imágenes
+import Buttons from "../../../components/Buttons";
+// Importar todas las imágenes de los iconos
 import iconNoche from "../../../assets/img/icon-noche-o.png";
 import iconDia from "../../../assets/img/icon-dia-o.png";
 import iconEstable from "../../../assets/img/icon-estable-o.png";
@@ -56,11 +57,11 @@ function ButterflyCard({ butterfly }) {
         {butterfly.shortDescription}
       </p>
       {/* Actividad y Status con ícono */}
-      <div className="pb-6 flex gap-3">
+      <div className="pb-3 flex gap-3">
         <img
           src={butterfly.activity === "0" ? iconNoche : iconDia}
           alt="Activity icon"
-          className="w-10 h-10"
+          className="w-12 h-12"
         />
         <img
           src={
@@ -71,23 +72,23 @@ function ButterflyCard({ butterfly }) {
               : iconCritico
           }
           alt="Status icon"
-          className="w-10 h-10"
+          className="w-12 h-12"
         />
       </div>
 
       <h3
-        className="pb-4 sm:pb-6 text-base sm:text-lg text-mint-green-700 mb-4"
+        className="pb-4 sm:pb-3 text-base sm:text-lg text-mint-green-700 mb-4"
         style={{ fontFamily: "Segoe UI, sans-serif" }}
       >
         📍 {butterfly.location}
       </h3>
-
-      <button
-        className="mx-auto block bg-light-green-600 text-white py-3 px-6 sm:py-3 sm:px-6 rounded-lg font-medium hover:bg-mint-green-700 transition-colors duration-200 text-sm sm:text-base mt-auto font-['Segoe_UI']"
-        onClick={() => navigate(`/butterflydetails/${butterfly.id}`)}
-      >
-        Leer más
-      </button>
+      <div className="flex justify-center my-8 mx-auto block mt-auto">
+        <Buttons
+          styleType="tertiary"
+          text="Leer más"
+          linkTo={`/butterflydetails/${butterfly.id}`}
+        />
+      </div>
     </div>
   );
 }
