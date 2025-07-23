@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard";
 import { getAllButterflies } from "../services/ButterflyServices"; // ← Importa el servicio
 import TitleSection from "../components/TitleSection";
-import { useNavigate } from "react-router-dom"; // Para el botón de crear nueva
 import Buttons from "../components/Buttons";
 
 const ButterflyGrid = () => {
@@ -10,7 +9,6 @@ const ButterflyGrid = () => {
   const [butterflies, setButterflies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {

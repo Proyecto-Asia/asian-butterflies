@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Para el botón a la ficha de cada mariposa
 import Buttons from "../../../components/Buttons";
 // Importar todas las imágenes de los iconos
 import iconNoche from "../../../assets/img/icon-noche-o.png";
@@ -9,7 +8,6 @@ import iconVulnerable from "../../../assets/img/icon-vulnerable-o.png";
 import iconCritico from "../../../assets/img/icon-critico-o.png";
 
 function ButterflyCard({ butterfly }) {
-  const navigate = useNavigate();
   // Función para obtener el icono de actividad
   const getActivityIcon = (activity) => {
     return activity === "0" ? iconNoche : iconDia;
