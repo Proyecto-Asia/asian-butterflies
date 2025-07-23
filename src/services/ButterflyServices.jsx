@@ -1,9 +1,8 @@
 // Metodo GET para el read
-
+import React from "react";
 import axios from "axios";
 
 const URL_API = "http://localhost:3000/butterfly/";
-
 
 export const getAllButterflies = async () => {
     try {
