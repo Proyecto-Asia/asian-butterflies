@@ -4,7 +4,8 @@ import ButterflyIntroReut from "../components/ButterflyIntroReut";
 import introbutterflyg from "../assets/img/intro-butterfly-g.png";
 import TitleSection from "../components/TitleSection";
  import MapaINaturalist from "../components/MapaINaturalist";
-//  import MapaLoading from "../components/MapaLoading";
+  
+
 
 
 const Home = () => {
@@ -52,7 +53,8 @@ const Home = () => {
 
        <TitleSection title="Mapa de observaciones" />
        <MapaINaturalist/>   
-       {/* <MapaLoading/>  */}
+      
+
 
 
     </>
