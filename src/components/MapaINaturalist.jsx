@@ -2,6 +2,7 @@
 import {  MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 import React, { useEffect, useState } from 'react';
+import Loader from './Loader';
 
 
 // function MapaINaturalist() {
@@ -67,9 +68,10 @@ function MapaINaturalist () {
 if (loading) {
     return (
         <div className="flex justify-center items-center h-[600px]">
-        <p className="text-lg font-semibold animate-pulse text-purple-600">
+        {/* <p className="text-lg font-semibold animate-pulse text-purple-600">
           Cargando observaciones de mariposas...
-        </p>
+        </p> */}
+        <Loader/>
       </div>
     );
 }
