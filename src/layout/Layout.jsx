@@ -7,12 +7,12 @@ const Layout = () => {
   return (
 
     <>
-      <body className="bg-mint-green-0 min-h-full" >
+      
         <NavBar />
 
         <Outlet />
-        <FooterBar />
-      </body>
+      {/*<FooterBar />*/}
+     
 
     </>
   )

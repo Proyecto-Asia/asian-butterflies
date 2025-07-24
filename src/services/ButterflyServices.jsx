@@ -24,12 +24,12 @@ export const getOneButterfly = async (id) => {
 // Metodo POST para el create
 
 export const createNewButterfly = async(data) =>{
-
+console.log("hola")
     const response = await axios.post(URL_API, data) ;
         return response.data; // para uqe devueleva algun dato
-}
 
-
+       
+    }
 // Metodo PUT para actualizar
 
 

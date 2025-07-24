@@ -1,6 +1,6 @@
 import Countryselect from "./Countryselect";
 
-const Createform = ({ FormData, onChange, onSubmit }) => {
+const Createform = ({ FormData, onChange, onSubmit, data, handleSelectionChange, controlarInput }) => {
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -45,9 +45,12 @@ const Createform = ({ FormData, onChange, onSubmit }) => {
                 />
               </div>
               <div>
-                <label htmlFor="">
+                <label htmlFor=""
+                className="text-[#28422B]">
                   Seleccione el pais de origen: <br />
-                  <Countryselect />
+                  <Countryselect 
+                  datos={data}
+                  onChange={handleSelectionChange}/>
                 </label>
               </div>
               <div className="flex flex-col">
@@ -94,17 +97,24 @@ const Createform = ({ FormData, onChange, onSubmit }) => {
                 </label>
                 {/* Aqui tengo que ver como es con el select para vincularlo */}
 
-                <label htmlFor="">
+                <label htmlFor="radio-diurno">
                   <input
                     type="radio"
                     name="activity"
-                    value={FormData.activity}
+                    value="diurno"
+                    checked={FormData.activity === "diurno"}
+                    onChange={controlarInput}
                     className=""
                   />{" "}
                   Diurno
                 </label>
-                <label htmlFor="">
-                  <input type="radio" name="activity" className="" />
+                <label htmlFor="radio-nocturno">
+                  <input type="radio" 
+                  name="activity"
+                  value="nocturno"
+                  checked={FormData.activity === "nocturno"} 
+                    onChange={controlarInput} 
+                  className="" />
                   Nocturno
                 </label>
                 <br />
@@ -126,7 +136,7 @@ const Createform = ({ FormData, onChange, onSubmit }) => {
                     name="img-butterfly"
                     className="hidden"
                     accept="image/jpeg,image/png,image/webp"
-                    required
+                  
                   />
                   Elegir archivo
                 </label>

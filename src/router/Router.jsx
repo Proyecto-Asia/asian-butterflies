@@ -7,6 +7,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Galeria from "../pages/Galeria";
 import Createform from "../components/Createform";
+import Countryselect from "../components/Countryselect";
 
 
 const routerButterfly = createBrowserRouter([{
@@ -36,11 +37,11 @@ const routerButterfly = createBrowserRouter([{
        {
         path: "/gallery",
         element: <Galeria/>
-       },
+       }, 
        {
-        path: "/formulario",
-        element: <Createform/>
-       }
+        path: "/selector",
+        element: <Countryselect/>
+       },
     ]
 
 }])
