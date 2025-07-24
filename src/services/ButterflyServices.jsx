@@ -2,7 +2,6 @@ import axios from "axios";
 
 const URL_API = "http://localhost:3000/butterfly/";
 
-
 export const getAllButterflies = async () => {
     try {
         const response = await axios.get(URL_API);
