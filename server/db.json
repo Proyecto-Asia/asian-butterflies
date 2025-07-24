@@ -83,6 +83,102 @@
             "region": "Asia Oriental",
             "location": "China",
             "imageUrl": "https://www.thespruce.com/thmb/XoK9QcIOTWP09yDkYEXIkqzsloE=/2560x0/filters:no_upscale():max_bytes(150000):strip_icc()/85455257-56a709dc5f9b58b7d0e6347e.jpg"
+        },
+        {
+            "id": "8",
+            "name": "Mariposa Cebra de Longwing",
+            "sciname": "Heliconius charithonia asiatica",
+            "shortDescription": "Mariposa de vuelo lento con distintivas rayas blancas y negras que la hacen inconfundible.",
+            "longDescription": "Esta elegante especie es conocida por su vuelo pausado y grácil, muy diferente al aleteo errático de otras mariposas. Sus alas alargadas con patrones de rayas blancas y negras la hacen fácilmente reconocible. A diferencia de muchas especies, puede vivir hasta 6 meses como adulto, una longevidad excepcional en el mundo de las mariposas. Se alimenta tanto de néctar como de polen, y las hembras pueden poner huevos durante varios meses. Es una especie gregaria que a menudo se agrupa para dormir.",
+            "activity": "1",
+            "status": "0",
+            "region": "Sudeste Asiático",
+            "location": "Indonesia",
+            "imageUrl": "https://cdn.pixabay.com/photo/2015/01/03/20/20/zebra-longwing-587787_1280.jpg"
+        },
+        {
+            "id": "9",
+            "name": "Mariposa Ojo de Búho Gigante",
+            "sciname": "Caligo memnon asiaticus",
+            "shortDescription": "Impresionante mariposa con grandes ocelos que imitan ojos de búho en el reverso de sus alas.",
+            "longDescription": "Una de las mariposas más impresionantes de Asia, famosa por los enormes ocelos en el reverso de sus alas posteriores que imitan perfectamente los ojos de un búho. Esta adaptación evolutiva la protege de depredadores al crear la ilusión de ser un animal mucho más grande y peligroso. Prefiere las horas del amanecer y atardecer para alimentarse de frutas fermentadas. Sus orugas son igualmente impresionantes, pudiendo alcanzar los 15 cm de longitud. Los adultos raramente visitan flores, prefiriendo la savia de árboles y frutas podridas.",
+            "activity": "0",
+            "status": "1",
+            "region": "Sudeste Asiático",
+            "location": "Filipinas",
+            "imageUrl": "https://i.pinimg.com/originals/fa/a5/5d/faa55d07a837994c3bc1718aff0b7e5a.jpg"
+        },
+        {
+            "id": "10",
+            "name": "Mariposa Cristal del Bosque",
+            "sciname": "Greta transparens orientalis",
+            "shortDescription": "Extraordinaria mariposa con alas casi completamente transparentes, como cristal viviente.",
+            "longDescription": "Una de las especies más únicas del mundo, sus alas son prácticamente transparentes con solo finas líneas de color marrón delimitando los bordes. Esta transparencia la hace casi invisible cuando vuela entre la vegetación densa del bosque tropical. Se alimenta exclusivamente de plantas que contienen alcaloides tóxicos, lo que la hace venenosa para los depredadores. Su vuelo es suave y silencioso, pareciendo más un fantasma que una mariposa real. Las hembras prefieren poner sus huevos en plantas jóvenes donde las orugas tendrán mejor acceso a los nutrientes.",
+            "activity": "1",
+            "status": "2",
+            "region": "Sudeste Asiático",
+            "location": "Brunéi",
+            "imageUrl": "https://i.pinimg.com/originals/e0/f1/08/e0f10857c369bd87f09cdcfb98831c97.jpg"
+        },
+        {
+            "id": "11",
+            "name": "Mariposa Dragón Dorado",
+            "sciname": "Troides helena cerberus",
+            "shortDescription": "Majestuosa mariposa dorada considerada sagrada en muchas culturas asiáticas por su belleza.",
+            "longDescription": "Conocida como la 'Reina de las Mariposas' en muchas culturas asiáticas, esta especie exhibe un dorado metálico brillante en sus alas que parece cambiar de intensidad según la luz. Los machos son altamente territoriales y pueden verse patrullando sus áreas durante horas. Su envergadura puede alcanzar los 19 cm, siendo una de las especies más grandes de la región. Se alimenta preferentemente de flores rojas y naranjas, y tiene una preferencia particular por las flores de hibisco. Las orugas se desarrollan exclusivamente en plantas de la familia Aristolochiaceae.",
+            "activity": "1",
+            "status": "1",
+            "region": "Asia del Sur",
+            "location": "Sri Lanka",
+            "imageUrl": "https://live.staticflickr.com/8333/8436616633_e830240d61_b.jpg"
+        },
+        {
+            "id": "12",
+            "name": "Mariposa Sombra Nocturna",
+            "sciname": "Erebus nocturnis himalayensis",
+            "shortDescription": "Gran polilla nocturna de color negro azabache con patrones plateados que brillan bajo la luna.",
+            "longDescription": "Esta impresionante polilla nocturna es una de las más grandes de Asia, con alas que pueden superar los 20 cm de envergadura. Su coloración negra profunda con intrincados patrones plateados la hace casi invisible en la oscuridad. Es conocida por su vuelo potente y directo, muy diferente al vuelo errático de otras polillas. Se siente atraída por luces artificiales pero también por ciertos aromas florales nocturnos. Los machos pueden detectar las feromonas de las hembras desde distancias superiores a los 5 kilómetros. Su ciclo de vida completo puede durar hasta dos años.",
+            "activity": "0",
+            "status": "0",
+            "region": "Asia del Sur",
+            "location": "Pakistán",
+            "imageUrl": "https://i.pinimg.com/736x/a2/82/e0/a282e09cfc928385ef830a6aa57df8a8--taiwan-blue.jpg"
+        },
+        {
+            "id": "13",
+            "name": "Mariposa Arcoíris del Mekong",
+            "sciname": "Chrysiridia ripheus mekongensis",
+            "shortDescription": "Espectacular mariposa que refleja todos los colores del arcoíris en sus alas iridiscentes.",
+            "longDescription": "Considerada una de las mariposas más hermosas del mundo, sus alas crean un espectáculo de colores iridiscentes que incluye verdes, azules, púrpuras y dorados, todos brillando simultáneamente. Este efecto se debe a la estructura microscópica de sus escamas, que refractan la luz de manera similar a un prisma. Es endémica de las regiones del río Mekong y está estrechamente ligada al ecosistema fluvial. Los machos establecen territorios cerca del agua donde realizan complejas danzas de cortejo. Desafortunadamente, su belleza la ha convertido en objetivo de coleccionistas, amenazando sus poblaciones naturales.",
+            "activity": "1",
+            "status": "2",
+            "region": "Sudeste Asiático",
+            "location": "Vietnam",
+            "imageUrl": "https://www.ekologia.pl/wp-content/uploads/2023/03/max_chrysiridia_rhipheus.jpg"
+        },
+        {
+            "id": "14",
+            "name": "Mariposa Espejo de Plata",
+            "sciname": "Argyreus hyperbius asiaticus",
+            "shortDescription": "Elegante mariposa con manchas plateadas brillantes que parecen pequeños espejos en sus alas.",
+            "longDescription": "Esta hermosa especie se caracteriza por las distintivas manchas plateadas en el reverso de sus alas, que brillan como pequeños espejos al sol. Es una especie migratoria que puede viajar cientos de kilómetros siguiendo las estaciones florales. Los machos son conocidos por su comportamiento de 'hilltopping', congregándose en las cimas de las colinas para buscar pareja. Se alimenta de una gran variedad de flores, pero muestra preferencia por las violetas silvestres. Las hembras son más grandes que los machos y pueden poner hasta 500 huevos durante su vida reproductiva.",
+            "activity": "1",
+            "status": "0",
+            "region": "Asia Oriental",
+            "location": "Mongolia",
+            "imageUrl": "https://insectaintegration.com/wp-content/uploads/2021/11/%E6%96%90%E8%B1%B9%E8%9B%B1%E8%9D%B6-Argyreus-hyperbius-%E2%99%82-HNH3.jpg"
+        },
+        {
+            "id": "15",
+            "name": "Mariposa Fantasma del Bambú",
+            "sciname": "Bambusia spectris orientalis",
+            "shortDescription": "Misteriosa mariposa pálida que habita exclusivamente en bosques de bambú antiguos.",
+            "longDescription": "Esta especie etérea es endémica de los bosques de bambú más antiguos de Asia, donde su coloración pálida y translúcida la hace parecer un fantasma entre las cañas. Se alimenta exclusivamente del néctar de flores de bambú, un evento que ocurre solo cada 65-120 años dependiendo de la especie de bambú. Esta dependencia extrema la convierte en una de las especies más vulnerables del continente. Su vuelo es silencioso y ondulante, adaptado perfectamente para navegar entre los densos tallos de bambú. Los adultos emergen solo durante la floración masiva del bambú, haciendo que las poblaciones sean cíclicas y predecibles.",
+            "activity": "1",
+            "status": "2",
+            "region": "Asia Oriental",
+            "location": "Corea del Sur",
+            "imageUrl": "https://www.ifoundbutterflies.org/sites/default/files/2022-10/img_20220930_175753.jpg"
         }
     ]
 }

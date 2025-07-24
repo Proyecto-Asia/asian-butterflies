@@ -54,20 +54,17 @@ function ButterflyCard({ butterfly }) {
         />
       </div>
       <h2
-        className="font-bold text-lg sm:text-xl text-mint-green-700"
-        style={{ fontFamily: "Segoe UI, sans-serif" }}
+        className="font-bold text-lg sm:text-xl text-mint-green-700 font-segoe"
       >
         {butterfly.name}
       </h2>
       <h2
-        className="italic text-lg sm:text-xl text-mint-green-700 mb-4"
-        style={{ fontFamily: "Segoe UI, sans-serif" }}
+        className="italic text-lg sm:text-xl text-mint-green-700 mb-4 font-segoe"
       >
         {butterfly.sciname}
       </h2>
       <p
-        className="text-mint-green-700 mb-8 text-sm sm:text-base"
-        style={{ fontFamily: "Segoe UI, sans-serif" }}
+        className="text-mint-green-700 mb-8 text-sm sm:text-base font-segoe"
       >
         {butterfly.shortDescription}
       </p>
@@ -104,8 +101,7 @@ function ButterflyCard({ butterfly }) {
         </div>
       </div>
       <h3
-        className="pb-4 sm:pb-3 text-base sm:text-lg text-mint-green-700 mb-4"
-        style={{ fontFamily: "Segoe UI, sans-serif" }}
+        className="pb-4 sm:pb-3 text-base sm:text-lg text-mint-green-700 mb-4 font-segoe"
       >
         📍 {butterfly.location}
       </h3>
