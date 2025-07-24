@@ -1,11 +1,11 @@
 import React from "react";
-import Buttons from "../../../components/Buttons";
+import Buttons from "../Buttons";
 // Importar todas las imágenes de los iconos
-import iconNoche from "../../../assets/img/icon-noche-o.png";
-import iconDia from "../../../assets/img/icon-dia-o.png";
-import iconEstable from "../../../assets/img/icon-estable-o.png";
-import iconVulnerable from "../../../assets/img/icon-vulnerable-o.png";
-import iconCritico from "../../../assets/img/icon-critico-o.png";
+import iconNoche from "../../assets/img/icon-noche-o.png";
+import iconDia from "../../assets/img/icon-dia-o.png";
+import iconEstable from "../../assets/img/icon-estable-o.png";
+import iconVulnerable from "../../assets/img/icon-vulnerable-o.png";
+import iconCritico from "../../assets/img/icon-critico-o.png";
 
 function ButterflyCard({ butterfly }) {
   //Funciones helper para Tooltip
@@ -72,7 +72,7 @@ function ButterflyCard({ butterfly }) {
       <div className="pb-3 flex gap-3">
         <div className="relative group">
           <img
-            src={butterfly.activity === "0" ? iconNoche : iconDia}
+            src={getActivityIcon(butterfly.activity)}
             alt="Activity icon"
             className="w-12 h-12 cursor-help"
           />
@@ -84,13 +84,7 @@ function ButterflyCard({ butterfly }) {
 
         <div className="relative group">
           <img
-            src={
-              butterfly.status === "0"
-                ? iconEstable
-                : butterfly.status === "1"
-                ? iconVulnerable
-                : iconCritico
-            }
+            src={getStatusIcon(butterfly.status)}
             alt="Status icon"
             className="w-12 h-12 cursor-help"
           />

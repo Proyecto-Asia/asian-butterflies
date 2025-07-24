@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ButterflyCard from "../components/butterflies/ButterflyCard/ButterflyCard";
+import ButterflyCard from "../components/butterflies/ButterflyCard";
 import { getAllButterflies } from "../services/ButterflyServices"; // ← Importa el servicio
 import TitleSection from "../components/TitleSection";
 import Buttons from "../components/Buttons";
