@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 // Importa useParams para obtener parámetros de la URL (como el id)
 
@@ -7,6 +8,7 @@ import { useEffect, useState } from "react";
 import { getOneButterfly } from "../services/ButterflyServices";
 // Importa la función que obtiene los datos de una mariposa según su id (la ruta puede variar)
 import TitleSection from "../components/TitleSection";
+
 
 function ButterflyDetail() {
     const { id } = useParams();
