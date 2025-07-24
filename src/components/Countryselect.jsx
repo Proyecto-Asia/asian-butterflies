@@ -79,13 +79,14 @@ const Countryselect = ({data, onChange}) => {
         ))}
       </select>
       <br /><br />
+      {/* Aqui se esta recorriendo el valor de lo que esta dentro del regionData*/}
       {regionSeleccionada && (
         <select 
         value={paisSeleccionado} 
         onChange={cambiarPais}
          className="border border-gray-300 h-10 w-60">
           <option value="">-- Elige un país --</option>
-          {regionData[regionSeleccionada].map((pais) => (
+          {regionData[regionSeleccionada].map((pais) => ( 
             <option key={pais} value={pais}>
               {pais}
             </option>
