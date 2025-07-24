@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 GetButterflies.jsx
-ButterflyIntro.jsx
+ButterflyIntroGem.jsx
+MapaLoading.jsx

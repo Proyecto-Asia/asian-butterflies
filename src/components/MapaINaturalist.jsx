@@ -23,20 +23,57 @@ import React, { useEffect, useState } from 'react';
 // }
 // export default MapaINaturalist;
 
- function MapaINaturalist () {
+function MapaINaturalist () {
   //observations: almacena las observaciones de mariposas que vienen del API.
   //setObservations: función para actualizar ese estado.
    const [observations, setObservations] = useState([]);//Inicialmente está vacío ([]), porque aún no hemos hecho la petición.
-
+    const [loading, setLoading] = useState(true);
    useEffect(() => {
     // Usamos la API de iNaturalist con el taxon_id=47157 (mariposas) y place_id=97394 (Asia)
-  fetch('https://api.inaturalist.org/v1/observations?taxon_id=47157&has[]=geo&per_page=200&page=1&swlat=0&swlng=90&nelat=36&nelng=146')
-     .then(res => res.json())//convertimos la respuesta en JSON
-       .then(data => setObservations(data.results));//Guardamos los resultados (data.results) dentro del estado observations.
+ const fetchObservations = async () => {
+    try {
+    //// Petición a la página 1
+        const response1= await fetch ('https://api.inaturalist.org/v1/observations?taxon_id=47157&has[]=geo&per_page=200&page=3&swlat=6&swlng=68&nelat=36&nelng=92')
+         if (!response1.ok) {
+      throw new Error("Error en la respuesta de la API");
+    }
+        const data1 = await response1.json ();
+        console.log("Datos recibidos:", data1); // DEBUG
+        // peticion pagina 2
+         const response2= await fetch ('https://api.inaturalist.org/v1/observations?taxon_id=47157&has[]=geo&per_page=200&page=2&swlat=0&swlng=90&nelat=36&nelng=146')
+         if (!response2.ok) {
+      throw new Error("Error en la respuesta de la API");
+    }
+        const data2 = await response2.json ();
+        console.log("Datos recibidos:", data2); // DEBUG
+        // hacemos constante para las dos paginas
+        const allData = [...data1.results, ...data2.results]; // ... es un array concadenado ....
+        setObservations (allData);
+        setLoading (false);// cuando ya tenemos los datos
 
+    } catch  (error) {
+        console.error("Error al cargar las observaciones:", error);
+      setLoading(false); // ✅ aunque falle, quitamos el "cargando"
+    }
+     
 
-   }, []);//El array vacío [] indica que este efecto se ejecuta solo una vez, cuando el componente se monta, si no se repetiria muchas veces.
+    };  
+    
+    fetchObservations  ();
 
+ }, [])
+
+// Mienttras se cargan los datos 
+if (loading) {
+    return (
+        <div className="flex justify-center items-center h-[600px]">
+        <p className="text-lg font-semibold animate-pulse text-purple-600">
+          Cargando observaciones de mariposas...
+        </p>
+      </div>
+    );
+}
+// si ya se cargaron mostramos el mapa
   return (
     <div className='flex justify-center items-center mb-10 h-[600px] w-[80%] max-w-5xl mx-auto'>
    <MapContainer center={[20, 100]} zoom={4} className='h-full w-full rounded-lg shadow-lg'>
@@ -63,8 +100,5 @@ import React, { useEffect, useState } from 'react';
  </div>
   );
  }
-
  export default MapaINaturalist;
-
-
 
