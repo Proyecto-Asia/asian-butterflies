@@ -5,44 +5,38 @@ import ButterflyDetail from "../pages/ButterflyDetail";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
-import Galeria from "../pages/Galeria";
-import Createform from "../components/Createform";
-import Countryselect from "../components/Countryselect";
+import ButterflyGrid from "../pages/ButterflyGrid";
 
-
-const routerButterfly = createBrowserRouter([{
- path :"/",
- element: <Layout/>,
+const routerButterfly = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
     children: [
-        {
+     {
         index: true,
-        element: <Home/>,
-        },
-        {
-            path: "/newbutterfly", 
-            element: <CreateButterfly/>
-        },
-        {
-            path: "/editbutterfly:id",
-            element: <EditedButterfly/>
-        },
-       {
+        element: <Home />,
+      },
+      {
+        path: "/newbutterfly",
+        element: <CreateButterfly />,
+      },
+      {
+        path: "/editbutterfly:id",
+        element: <EditedButterfly />,
+      },
+      {
         path: "/butterflydetails/:id",
-        element: <ButterflyDetail/>
-       }, 
-       {
-        path: "/contact", 
-        element: <Contact/>
-       }, 
-       {
-        path: "/gallery",
-        element: <Galeria/>
-       }, 
-       {
-        path: "/selector",
-        element: <Countryselect/>
-       },
-    ]
-
-}])
+        element: <ButterflyDetail />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/butterflygrid",
+        element: <ButterflyGrid />,
+      },
+    ],
+  },
+]);
 export default routerButterfly;
