@@ -40,7 +40,7 @@ const ButterflyDetail = () => {
       //poner aquí alertas mariany??
       `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`
     );
-    if (!confirmDelete) {
+    if (!confirmDelete) {//la exclamación lo que hace es invertir el valor de la constante
       return; //Si el usuario cancela no se hace nada
     }
     try {
