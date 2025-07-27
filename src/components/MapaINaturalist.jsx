@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import React, { useEffect, useState } from 'react';
 import Loader from './Loader';
 
-
+//MANERA SENCILLA DE IMCORPORAR EL MAPA DESDE LA PAGINA PERO NO NOS DEJABA IMPORTAR SU PAGINA
 // function MapaINaturalist() {
 //     return (
 //         <div className="w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden shadow-lg"> 
@@ -64,7 +64,7 @@ function MapaINaturalist () {
 
  }, [])
 
-// Mienttras se cargan los datos 
+// Mienttras se cargan los datos AQUI METEMEOS EL COMPOENTE LOADER DE LA MARIPOSA QUITAMOS EL TEXTO METEMOS COMPONENTE
 if (loading) {
     return (
         <div className="flex justify-center items-center h-[600px]">
@@ -77,12 +77,25 @@ if (loading) {
 }
 // si ya se cargaron mostramos el mapa
   return (
-    <div className='flex justify-center items-center mb-10 h-[600px] w-[80%] max-w-5xl mx-auto'>
-   <MapContainer center={[20, 100]} zoom={4} className='h-full w-full rounded-lg shadow-lg'>
-     <TileLayer
+    <div className='flex justify-center items-center mb-10 h-[600px] w-[80%] max-w-5xl mx-auto 
+  border-2 border-green-700 shadow-xl rounded-2xl 
+  hover:shadow-[0_0_30px_6px_rgba(0,0,0,0.6)] transition-shadow duration-300'>
+   <MapContainer center={[25, 100]} minZoom={2} zoom={4} maxZoom={8} className='h-full w-full rounded-lg shadow-lg'>
+     {/* <TileLayer
        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; OpenStreetMap contributors"
-     /> 
+     />  */}
+       <>
+    <TileLayer
+      url="https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}"
+      attribution='Tiles &copy; <a href="https://www.esri.com/en-us/home">Esri</a> &mdash; Sources: GEBCO, NOAA, National Geographic, DeLorme, and Esri'
+    />
+    <TileLayer
+      url="https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}"
+      attribution='Labels &copy; Esri'
+    />
+  </>
+
         {/* Recorremos el array de observaciones con .map() para crear un marcador (CircleMarker) para cada mariposa. */}
       {observations.map(obs => (  
         <CircleMarker

@@ -3,11 +3,8 @@ import "../index.css" // aqui ya se importa tailwind
 import ButterflyIntroReut from "../components/ButterflyIntroReut";
 import introbutterflyg from "../assets/img/intro-butterfly-g.png";
 import TitleSection from "../components/TitleSection";
- import MapaINaturalist from "../components/MapaINaturalist";
+import MapaINaturalist from "../components/MapaINaturalist";
   
-
-
-
 const Home = () => {
   return (
 

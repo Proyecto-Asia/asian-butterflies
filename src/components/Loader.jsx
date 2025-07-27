@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+//Componente de una libreria para cuando se carga el mapa
 const Loader = () =>{
 
 return (
