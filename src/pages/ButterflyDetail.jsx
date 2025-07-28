@@ -40,7 +40,8 @@ const ButterflyDetail = () => {
       //poner aquí alertas mariany??
       `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`
     );
-    if (!confirmDelete) {//la exclamación lo que hace es invertir el valor de la constante
+    if (!confirmDelete) {
+      //la exclamación lo que hace es invertir el valor de la constante
       return; //Si el usuario cancela no se hace nada
     }
     try {
@@ -75,6 +76,13 @@ const ButterflyDetail = () => {
     fetchData();
   }, [id]); // Se ejecuta cuando cambia el ID
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []); // Se ejecuta al montar el componente
+
   //gestionar los estados de carga y error
   if (loading) {
     return <div>Cargando ficha de Mariposa... 🦋</div>;
@@ -90,30 +98,36 @@ const ButterflyDetail = () => {
     <>
       <section className="mx-8">
         <TitleSection title={`Ficha de ${butterfly.name}`} />
-        <div className="relative mb-6">
+        <div className="relative mb-6 flex justify-center">
           <img
             src={butterfly.imageUrl}
             alt={butterfly.imageAlt}
-            className="w-full rounded-[20px]"
+            className="max-w-xs sm:max-w-md lg:max-w-xl w-full h-auto rounded-[20px]"
           />
         </div>
-        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Nombre científico:</span>{" "}
-          <span className="italic">{butterfly.sciname}</span>
-        </p>
-        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Periodo de Actividad:</span>{" "}
-          <span>{getActivityText(butterfly.activity)}</span>
-        </p>
-        <p className="text-mint-green-700 mb-4 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Estado de Conservación:</span>{" "}
-          <span>{getStatusText(butterfly.status)}</span>
-        </p>
-        <p className="text-mint-green-700 mb-1 text-xl sm:text-xl font-segoe">
-          {butterfly.longDescription}
-        </p>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Nombre Científico:</span>{" "}
+            <span className="italic">{butterfly.sciname}</span>
+          </p>
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Periodo de Actividad:</span>{" "}
+            <span>{getActivityText(butterfly.activity)}</span>
+          </p>
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Estado de Conservación:</span>{" "}
+            <span>{getStatusText(butterfly.status)}</span>
+          </p>
+          <p className="text-mint-green-700 mb-4 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Localización:</span>{" "}
+            <span>{butterfly.location}</span>
+          </p>
+          <p className="text-mint-green-700 mb-1 text-sm lg:text-lg font-segoe">
+            {butterfly.longDescription}
+          </p>
+        </div>
         <div className="flex justify-center my-8">
-          <Buttons 
+          <Buttons
             styleType="primary"
             text="Editar Ficha"
             className="mt-8 ml-6"
