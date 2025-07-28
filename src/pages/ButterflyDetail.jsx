@@ -113,7 +113,7 @@ const ButterflyDetail = () => {
           {butterfly.longDescription}
         </p>
         <div className="flex justify-center my-8">
-          <Buttons //Pendiente linkar a la función de priscelis
+          <Buttons 
             styleType="primary"
             text="Editar Ficha"
             className="mt-8 ml-6"
