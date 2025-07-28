@@ -22,9 +22,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-GetButterflies.jsx
-ButterflyIntroGem.jsx
-MapaLoading.jsx
-ButterflyDetailLarisa.jsx
-ButerflyScene.jsx
-HomeScene.jsx
+

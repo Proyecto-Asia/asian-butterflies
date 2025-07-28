@@ -8,6 +8,8 @@ import { getOneButterfly } from "../services/ButterflyServices";
 // Importa la función que obtiene los datos de una mariposa según su id (la ruta puede variar)
 import TitleSection from "../components/TitleSection";
 
+
+
 function ButterflyDetail() {
     const { id } = useParams();
     // Obtiene el parámetro 'id' de la URL, que identifica qué mariposa mostrar
@@ -31,13 +33,22 @@ function ButterflyDetail() {
                 setLoading(false);
                 // Cambia el estado de carga a false porque ya terminó
             })
+
             .catch(err => {
                 setError("Error cargando Mariposas");
+
+            .catch((err) => {
+                setError(`Error cargando la mariposa ${err.message}`);
+
                 // Si hay error, guarda mensaje de error ("Error cargando la mariposa")
                 setLoading(false);
                 // Cambia carga a false igual para que deje de mostrar loading
             });
+
     }, [id]);
+
+    }, []);
+
     // El efecto se ejecuta cada vez que cambia el id (cuando se carga una mariposa diferente)
 
     if (loading) return <p>Загрузка...</p>;
@@ -69,6 +80,7 @@ function ButterflyDetail() {
         </>
     );
 }
+
 
 export default ButterflyDetail;
 // Exporta el componente para usarlo en otros archivos
