@@ -99,7 +99,7 @@ function ButterflyCard({ butterfly }) {
       >
         📍 {butterfly.location}
       </h3>
-      <div className="flex justify-center my-8 mx-auto block mt-auto">
+      <div className="flex justify-center my-8 mx-auto mt-auto">
         <Buttons
           styleType="tertiary"
           text="Leer más"
