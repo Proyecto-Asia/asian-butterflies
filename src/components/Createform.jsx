@@ -58,7 +58,10 @@ const Createform = ({
               <div>
                 <label className="text-[#28422B]">
                   Seleccione el país de origen: <br />
-                  <Countryselect datos={data} onChange={handleSelectionChange} />
+                  <Countryselect
+                    datos={data}
+                    onChange={handleSelectionChange}
+                  />
                 </label>
               </div>
 
@@ -102,9 +105,11 @@ const Createform = ({
               </div>
               <div>
                 <label htmlFor="butterflies-status">
-                Estado actual de la mariposa: <br />
-                <StatusSelector/>
-
+                  Estado actual de la mariposa: <br />
+                  <StatusSelector
+                    value={FormData.status}
+                    onChange={onChange}
+                  />
                 </label>
               </div>
 
