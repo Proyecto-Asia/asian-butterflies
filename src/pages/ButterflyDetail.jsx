@@ -1,75 +1,135 @@
-
-import { useParams } from "react-router-dom";
-// Importa useParams para obtener parámetros de la URL (como el id)
-
-import { useEffect, useState } from "react";
-// Importa useEffect para efectos secundarios y useState para manejar estados
-
-import { getOneButterfly } from "../services/ButterflyServices";
-// Importa la función que obtiene los datos de una mariposa según su id (la ruta puede variar)
+import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  getOneButterfly,
+  deleteButterfly,
+} from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
+import Buttons from "../components/Buttons";
 
+// useState - Estados del componente
+const ButterflyDetail = () => {
+  const { id } = useParams(); // Obtener el ID de los parámetros de la URL
+  const navigate = useNavigate(); // Hook para navegar programáticamente
+  const [butterfly, setButterfly] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
-function ButterflyDetail() {
-    const { id } = useParams();
-    // Obtiene el parámetro 'id' de la URL, que identifica qué mariposa mostrar
+  //Variables de Actividad y Estado a texto
+  const getActivityText = (activity) => {
+    return activity === "0" ? "Nocturna" : "Diurna";
+  };
 
-    const [butterfly, setButterfly] = useState(null);
-    // Estado para guardar los datos de la mariposa (inicialmente null porque no hay datos)
+  const getStatusText = (status) => {
+    switch (status) {
+      case "0":
+        return "Estable";
+      case "1":
+        return "Vulnerable";
+      case "2":
+        return "Crítico";
+      default:
+        return "Estable";
+    }
+  };
 
-    const [loading, setLoading] = useState(true);
-    // Estado para controlar si está cargando la información (inicialmente true)
-
-    const [error, setError] = useState(null);
-    // Estado para guardar posibles errores (inicialmente no hay)
-
-    useEffect(() => {
-        getOneButterfly(id)
-            // Llama a la función que obtiene la mariposa por id
-            .then(data => {
-                setButterfly(data);
-                // Guarda los datos en el estado butterfly
-                 console.log("Datos de la mariposa recibidos:", data); // 👈 Verifica si llegan datos
-                setLoading(false);
-                // Cambia el estado de carga a false porque ya terminó
-            })
-            .catch((err) => {
-                setError(`Error cargando la mariposa ${err.message}`);
-                // Si hay error, guarda mensaje de error ("Error cargando la mariposa")
-                setLoading(false);
-                // Cambia carga a false igual para que deje de mostrar loading
-            });
-    }, []);
-    // El efecto se ejecuta cada vez que cambia el id (cuando se carga una mariposa diferente)
-
-    if (loading) return <p>Загрузка...</p>;
-    // Si está cargando, muestra "Cargando..."
-
-    if (error) return <p>{error}</p>;
-    // Si hay error, muestra el mensaje de error
-
-    if (!butterfly) return <p>Mariposa no encontrada</p>;
-    // Si no encontró la mariposa, muestra "Mariposa no encontrada"
-
-    return (
-        <>
-
-          <TitleSection title="Ficha de Mariposa"/>
-            <section className="flex flex-col xl:flex-row justify-center items-center xl:gap-30 p-8">
-                <div>
-                    <img src={butterfly.image} alt={butterfly.name}  className="max-w-[100px] mb-6 md:max-w-[200px] lg:max-w-[300px]"/>
-                    {/* Muestra la imagen de la mariposa con alt descriptivo */}
-                </div>
-                <div className="max-w-2xl order-1 md:order-2 text-center md:text-left ml-4 xl:ml-26 mr-2 md:mr-4" >
-                    <h1 className="font-segoe text-mint-green-700 text-1xl sm:text-2xl xl:text-3xl font-bold">{butterfly.name}</h1>
-                    {/* Muestra el nombre de la mariposa */}
-
-                    <p className="font-segoe text-mint-green-700 text-sm lg:text-lg">{butterfly.longDescription}</p>
-                    {/* Muestra la descripción de la mariposa */}
-                </div>
-            </section>
-        </>
+  // Función para ELIMINAR
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      //poner aquí alertas mariany??
+      `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`
     );
-}
+    if (!confirmDelete) {//la exclamación lo que hace es invertir el valor de la constante
+      return; //Si el usuario cancela no se hace nada
+    }
+    try {
+      setDeleting(true); //Activa estado de eliminación
+      await deleteButterfly(id); //llama al servicio de eliminación - metodo delete en services
+      alert(`La mariposa "${butterfly.name}" ha sido eliminada.`);
+      navigate("/butterflygrid");
+    } catch {
+      alert(
+        "Hubo un error al eliminar la mariposa. Por favor intántalo de nuevo."
+      );
+    } finally {
+      setDeleting(false); //Desactiva el estado de eliminación
+    }
+  };
+
+  // useEffect - Efecto para cargar los datos cuando se monta el componente
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const butterflyData = await getOneButterfly(id);
+        setButterfly(butterflyData);
+        setError(null);
+      } catch (error) {
+        setError(`Error cargando la mariposa: ${error.message}`);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [id]); // Se ejecuta cuando cambia el ID
+
+  //gestionar los estados de carga y error
+  if (loading) {
+    return <div>Cargando ficha de Mariposa... 🦋</div>;
+  }
+  if (error) {
+    return <div>{error} 🤦🏻‍♀️ </div>;
+  }
+  if (!butterfly) {
+    return <div>Mariposa no encontrada 😢</div>;
+  }
+
+  return (
+    <>
+      <section className="mx-8">
+        <TitleSection title={`Ficha de ${butterfly.name}`} />
+        <div className="relative mb-6">
+          <img
+            src={butterfly.imageUrl}
+            alt={butterfly.imageAlt}
+            className="w-full rounded-[20px]"
+          />
+        </div>
+        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
+          <span className="font-bold">Nombre científico:</span>{" "}
+          <span className="italic">{butterfly.sciname}</span>
+        </p>
+        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
+          <span className="font-bold">Periodo de Actividad:</span>{" "}
+          <span>{getActivityText(butterfly.activity)}</span>
+        </p>
+        <p className="text-mint-green-700 mb-4 text-xl sm:text-xl font-segoe">
+          <span className="font-bold">Estado de Conservación:</span>{" "}
+          <span>{getStatusText(butterfly.status)}</span>
+        </p>
+        <p className="text-mint-green-700 mb-1 text-xl sm:text-xl font-segoe">
+          {butterfly.longDescription}
+        </p>
+        <div className="flex justify-center my-8">
+          <Buttons 
+            styleType="primary"
+            text="Editar Ficha"
+            className="mt-8 ml-6"
+            linkTo={`/editbutterfly:id`}
+          />
+          <Buttons //Componente botón de Mariany
+            styleType="secondary"
+            text={deleting ? "Eliminando..." : "Eliminar"}
+            className="mt-8 ml-6"
+            onClick={handleDelete} // Pasar la función como prop
+            disabled={deleting} // Deshabilitar mientras se elimina
+          />
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default ButterflyDetail;
