@@ -1,6 +1,6 @@
-import Countryselect from "./Countryselect";
+import Countryselect from "./CountrySelect";
 import Imageselector from "./Imageselector";
-
+import StatusSelector from "./StatusSelector";
 const Createform = ({
   FormData,
   onChange,
@@ -100,6 +100,13 @@ const Createform = ({
                   required
                 />
               </div>
+              <div>
+                <label htmlFor="butterflies-status">
+                Estado actual de la mariposa: <br />
+                <StatusSelector/>
+
+                </label>
+              </div>
 
               {/* Actividad (radio buttons) */}
               <div className="flex flex-col">
@@ -110,8 +117,8 @@ const Createform = ({
                   <input
                     type="radio"
                     name="activity"
-                    value="diurno"
-                    checked={FormData.activity === "diurno"}
+                    value="1"
+                    checked={FormData.activity === "1"}
                     onChange={onChange}
                     className=""
                   />{" "}
@@ -121,8 +128,8 @@ const Createform = ({
                   <input
                     type="radio"
                     name="activity"
-                    value="nocturno"
-                    checked={FormData.activity === "nocturno"}
+                    value="0"
+                    checked={FormData.activity === "0"}
                     onChange={onChange}
                     className="mr-2 accent-[#28422B]"
                   />
