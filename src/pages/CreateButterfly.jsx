@@ -78,15 +78,18 @@ const CreateButterfly = () => {
 
   return (
     <>
-      <TitleSection title="¡Añade una nueva especie!" />
-
-      <CreateForm
-        FormData={newButterfly} // el estado con todos los valores
-        onChange={controlarInput} //Manejar cambios en los inputs
-        onSubmit={manejarEnvio} // La funcion para manejar el envio del formulario
-        data={data}
-        handleSelectionChange={handleSelectionChange}
-      />
+      <section>
+        <TitleSection title="¡Añade una nueva especie!" />
+        <div className="mx-8">
+          <CreateForm
+            FormData={newButterfly} // el estado con todos los valores
+            onChange={controlarInput} //Manejar cambios en los inputs
+            onSubmit={manejarEnvio} // La funcion para manejar el envio del formulario
+            data={data}
+            handleSelectionChange={handleSelectionChange}
+          />
+        </div>
+      </section>
     </>
   );
 };
