@@ -1,7 +1,4 @@
-// Metodo GET para el read
-import React from "react";
 import axios from "axios";
-
 const URL_API = "http://localhost:3000/butterfly/";
 
 export const getAllButterflies = async () => {
@@ -24,10 +21,34 @@ export const getOneButterfly = async (id) => {
 }
 
 // Metodo POST para el create
+
+export const createNewButterfly = async(data) =>{
+console.log("hola")
+    const response = await axios.post(URL_API, data) ;
+        return response.data; // para uqe devueleva algun dato
+
+       
+    }
 // Metodo PUT para actualizar
 
+export const EditButterfly = async (data) => {
+  
+  try {
+  
+    console.log("Intentando actualizar mariposa:", data);
+    const response = await axios.put(`${URL_API}/${data.id}`, data);
 
-// MEtodo DELETE para eliminar
+    return response.data;
+  } catch (error) {
+    // Si ocurre un error en la petición, lo mostramos por consola
+    console.error("Error al actualizar la mariposa:", error);
+
+    // Re-lanzamos el error para que quien use esta función lo pueda manejar
+    throw error; // Es como cuando hay un error grande lo detecta inmediatamente 
+  }
+};
+
+// Metodo DELETE para eliminar
 
 export const deleteButterfly = async (id) => {
     try {
