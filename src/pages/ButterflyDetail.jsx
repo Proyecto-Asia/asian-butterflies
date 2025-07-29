@@ -131,9 +131,8 @@ const ButterflyDetail = () => {
             styleType="primary"
             text="Editar Ficha"
             className="mt-8 ml-6"
-            linkTo={`/editbutterfly:id`}
-          />
-          <Buttons //Componente botón de Mariany
+            linkTo={`/editbutterfly/${butterfly.id}`}/>
+          <Buttons
             styleType="secondary"
             text={deleting ? "Eliminando..." : "Eliminar"}
             className="mt-8 ml-6"
