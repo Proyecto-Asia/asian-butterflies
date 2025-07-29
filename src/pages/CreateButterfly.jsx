@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../index.css";
-import Createform from "../components/Createform";
+import CreateForm from "../components/CreateForm";
 import { createNewButterfly } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
 
@@ -88,7 +88,7 @@ const CreateButterfly = () => {
         <TitleSection />
       </header>
 
-      <Createform
+      <CreateForm
         FormData={newButterfly} // el estado con todos los valores
         onChange={controlarInput} //Manejar cambios en los inputs
         onSubmit={manejarEnvio} // La funcion para manejar el envio del formulario

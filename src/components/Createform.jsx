@@ -1,7 +1,7 @@
 import Countryselect from "./CountrySelect";
 import Imageselector from "./Imageselector";
 import StatusSelector from "./StatusSelector";
-const Createform = ({
+const CreateForm = ({
   FormData,
   onChange,
   onSubmit,
@@ -175,4 +175,4 @@ const Createform = ({
   );
 };
 
-export default Createform;
+export default CreateForm;
