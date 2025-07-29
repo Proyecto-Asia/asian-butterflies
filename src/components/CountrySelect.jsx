@@ -1,7 +1,7 @@
-import React from "react";
+
 import { useState } from "react";
 
-const Countryselect = ({data, onChange}) => {
+const CountrySelect = ({data, onChange}) => {
   const [regionSeleccionada, setRegionSeleccionada] = useState();
   const [paisSeleccionado, setPaisSeleccionado] = useState();
   const regionData = {
@@ -97,6 +97,6 @@ const Countryselect = ({data, onChange}) => {
   );
 };
 
-export default Countryselect;
+export default CountrySelect;
 
 
