@@ -27,6 +27,7 @@ function ButterflyCard({ butterfly }) {
   };
   // Función para obtener el icono de actividad
   const getActivityIcon = (activity) => {
+    console.log("Actividad recibida:", activity);
     return activity === "0" ? iconNoche : iconDia;
   };
   // Función para obtener el icono de status
