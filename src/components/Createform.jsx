@@ -2,12 +2,14 @@ import Countryselect from "./CountrySelect";
 import Imageselector from "./Imageselector";
 import StatusSelector from "./StatusSelector";
 import Buttons from "../components/Buttons";
+
 const CreateForm = ({
   FormData,
   onChange,
   onSubmit,
   data,
   handleSelectionChange,
+  isSubmitting = false // Nuevo prop para manejar el estado de envío
 }) => {
   return (
     <>
@@ -23,12 +25,13 @@ const CreateForm = ({
           <input
             type="text"
             name="name"
-            maxLength="25"
+            maxLength="40"
             placeholder="Mariposa del Merge Infinito en Develop..."
             value={FormData.name}
             onChange={onChange}
             className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
             required
+            disabled={isSubmitting}
           />
         </div>
 
@@ -49,6 +52,7 @@ const CreateForm = ({
             placeholder="Morpho conflictus developensis.."
             className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
             required
+            disabled={isSubmitting}
           />
         </div>
 
@@ -56,7 +60,11 @@ const CreateForm = ({
         <div>
           <label className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
             Selecciona el país de origen: <br />
-            <Countryselect datos={data} onChange={handleSelectionChange} />
+            <Countryselect 
+              datos={data} 
+              onChange={handleSelectionChange} 
+              disabled={isSubmitting}
+            />
           </label>
         </div>
 
@@ -77,6 +85,7 @@ const CreateForm = ({
             onChange={onChange}
             className="rounded-md w-full h-10 sm:h-24 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
             required
+            disabled={isSubmitting}
           />
         </div>
 
@@ -96,15 +105,21 @@ const CreateForm = ({
             onChange={onChange}
             className="rounded-md w-full h-10 sm:h-40 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
             required
+            disabled={isSubmitting}
           />
         </div>
+
         <div>
           <label
             htmlFor="butterflies-status"
             className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
           >
             Estado de Conservación: <br />
-            <StatusSelector value={FormData.status} onChange={onChange} />
+            <StatusSelector 
+              value={FormData.status} 
+              onChange={onChange} 
+              disabled={isSubmitting}
+            />
           </label>
         </div>
 
@@ -121,6 +136,7 @@ const CreateForm = ({
               checked={FormData.activity === "1"}
               onChange={onChange}
               className="mr-2 text-mint-green-700 text-sm lg:text-lg font-segoe"
+              disabled={isSubmitting}
             />
             Diurna
           </label>
@@ -132,6 +148,7 @@ const CreateForm = ({
               checked={FormData.activity === "0"}
               onChange={onChange}
               className="mr-2 text-mint-green-700 mb-3 text-sm lg:text-lg font-segoe"
+              disabled={isSubmitting}
             />
             Nocturna
           </label>
@@ -142,6 +159,7 @@ const CreateForm = ({
           onUploadUrl={(url) =>
             onChange({ target: { name: "imageUrl", value: url } })
           }
+          disabled={isSubmitting}
         />
 
         {/* Vista previa */}
@@ -153,14 +171,23 @@ const CreateForm = ({
           />
         )}
 
-        {/* Botón enviar */}
-       <div className="flex justify-center my-8">
-        <Buttons  type="submit"
-          styleType="primary"
-          text="Agregar"
-          className="mt-8 ml-6"
-        />
-      </div>
+        {/* Botones */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 my-8">
+          <Buttons
+            type="submit"
+            styleType="primary"
+            text={isSubmitting ? "Creando..." : "Agregar"}
+            className="mt-8 ml-6"
+            disabled={isSubmitting}
+          />
+          <Buttons
+            styleType="secondary"
+            text="Cancelar"
+            linkTo="/butterflygrid"
+            className="mt-8 ml-6"
+            disabled={isSubmitting}
+          />
+        </div>
       </form>
     </>
   );
