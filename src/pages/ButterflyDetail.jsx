@@ -6,6 +6,7 @@ import {
 } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
 import Buttons from "../components/Buttons";
+import { confirmAlert, successAlert, errorAlert } from "../components/Alerts";
 
 // useState - Estados del componente
 const ButterflyDetail = () => {
@@ -36,25 +37,36 @@ const ButterflyDetail = () => {
 
   // Función para ELIMINAR
   const handleDelete = async () => {
-    const confirmDelete = window.confirm(
-      //poner aquí alertas mariany??
-      `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`
-    );
-    if (!confirmDelete) {
-      //la exclamación lo que hace es invertir el valor de la constante
-      return; //Si el usuario cancela no se hace nada
+    const result = await confirmAlert({
+      title: "Confirmar eliminación",
+      message: `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`,
+      confirmText: "Sí, eliminar",
+      cancelText: "Cancelar"
+    });
+
+    if (!result) {
+      return; // Si el usuario cancela no se hace nada
     }
+
     try {
-      setDeleting(true); //Activa estado de eliminación
-      await deleteButterfly(id); //llama al servicio de eliminación - metodo delete en services
-      alert(`La mariposa "${butterfly.name}" ha sido eliminada.`);
+      setDeleting(true); // Activa estado de eliminación
+      await deleteButterfly(id); // llama al servicio de eliminación - metodo delete en services
+      
+      // Usar successAlert en lugar de alert nativo
+      await successAlert({
+        title: "¡Eliminada!",
+        message: `La mariposa "${butterfly.name}" ha sido eliminada correctamente.`
+      });
+      
       navigate("/butterflygrid");
-    } catch {
-      alert(
-        "Hubo un error al eliminar la mariposa. Por favor intántalo de nuevo."
-      );
+    } catch (error) {
+      // Usar errorAlert en lugar de alert nativo
+      errorAlert({
+        title: "Error al eliminar",
+        message: "Hubo un error al eliminar la mariposa. Por favor inténtalo de nuevo."
+      });
     } finally {
-      setDeleting(false); //Desactiva el estado de eliminación
+      setDeleting(false); // Desactiva el estado de eliminación
     }
   };
 
@@ -68,6 +80,11 @@ const ButterflyDetail = () => {
         setError(null);
       } catch (error) {
         setError(`Error cargando la mariposa: ${error.message}`);
+        // Opcional: También puedes mostrar una alerta de error aquí
+        errorAlert({
+          title: "Error de carga",
+          message: `No se pudo cargar la información de la mariposa: ${error.message}`
+        });
       } finally {
         setLoading(false);
       }

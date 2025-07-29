@@ -1,12 +1,6 @@
 {
   "butterfly": [
     {
-      "id": "1",
-      "name": "Morpho azul",
-      "region": "Amazonas"
-    }
-   
-    ,{
       "id": "2",
       "name": "Mariposa Emperador Púrpura",
       "sciname": "Apatura iris",
@@ -65,18 +59,6 @@
       "region": "Asia del Sur",
       "location": "Nepal",
       "imageUrl": "https://live.staticflickr.com/65535/50918024782_6b20efc825_b.jpg"
-    },
-    {
-      "id": "7",
-      "name": "Mariposa Lunar China",
-      "sciname": "Actias ningpoensis",
-      "shortDescription": "Mariposa nocturna de color verde pálido con elegantes colas en sus alas posteriores.",
-      "longDescription": "La Actias ningpoensis es una polilla grande y hermosa que emerge solo durante las noches cálidas de primavera y verano. Sus alas verde pálido con intrincados patrones y largas colas la hacen inconfundible. Los machos tienen antenas plumosas más desarrolladas para detectar las feromonas de las hembras desde grandes distancias. Como muchas polillas grandes, los adultos no se alimentan y viven solo unas pocas semanas dedicadas exclusivamente a la reproducción. Las orugas se alimentan de hojas de diversos árboles caducifolios y pasan el invierno como pupas.",
-      "activity": "0",
-      "status": "0",
-      "region": "Asia Oriental",
-      "location": "China",
-      "imageUrl": "https://www.thespruce.com/thmb/XoK9QcIOTWP09yDkYEXIkqzsloE=/2560x0/filters:no_upscale():max_bytes(150000):strip_icc()/85455257-56a709dc5f9b58b7d0e6347e.jpg"
     },
     {
       "id": "8",
@@ -391,18 +373,6 @@
       "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753700456/yjxtoyshgglyqdiozuoh.png"
     },
     {
-      "id": "e16d",
-      "name": "mdckweiowsaxal",
-      "sciname": "xsamxej",
-      "shortDescription": "cdcdc,sdcsvr,vmv",
-      "longDescription": "dcdddddddddddsdcsdece",
-      "activity": "nocturno",
-      "status": "",
-      "region": "Asia Oriental",
-      "location": "Mongolia",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753700867/zrnx18zzma6zfsnchfty.png"
-    },
-    {
       "id": "9763",
       "name": "xsxsxsxsxsxsx",
       "sciname": "xxsxsxsxsxsx",
@@ -425,30 +395,6 @@
       "region": "Asia del Sur",
       "location": "Bangladesh",
       "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753703080/mvaztsf37oqsoaxn720z.png"
-    },
-    {
-      "id": "772b",
-      "name": "hola",
-      "sciname": "como estas",
-      "shortDescription": "hojjde",
-      "longDescription": "no se que hacer",
-      "activity": "1",
-      "status": "",
-      "region": "Asia Oriental",
-      "location": "Taiwán",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753703348/rhqifwvhb2lrkjtdr33a.png"
-    },
-    {
-      "id": "012c",
-      "name": "itjirtvrkdlvdsl",
-      "sciname": "cwñekfkder",
-      "shortDescription": "eedwededw",
-      "longDescription": "dedwedWEDWE",
-      "activity": "0",
-      "status": "2",
-      "region": "Asia Occidental",
-      "location": "Líbano",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753706271/rlf7t7xvdfpdwmz3pq4v.png"
     }
   ]
 }
