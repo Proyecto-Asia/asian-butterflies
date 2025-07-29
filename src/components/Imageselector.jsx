@@ -34,7 +34,7 @@ const Imageselector = ({ onUploadUrl }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-[#3D5B43] font-medium">
+      <label className="font-bold text-mint-green-700 text-sm lg:text-lg font-segoe">
         Selecciona una imagen:
       </label>
       <input
@@ -44,8 +44,8 @@ const Imageselector = ({ onUploadUrl }) => {
         className="file:mr-4 file:py-2 file:px-4
              file:rounded-md file:border-0
              file:text-sm file:font-semibold
-             file:bg-[#6A994E] file:text-white
-             hover:file:bg-[#588941]
+             file:bg-mint-green-600  file:text-white
+             hover:file:brightness-90 file:outline-mint-green-600  
              cursor-pointer"
       />
 
