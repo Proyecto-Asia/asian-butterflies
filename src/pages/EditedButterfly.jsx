@@ -2,12 +2,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditForm from "../components/EditForm";
 import { EditButterfly, getOneButterfly } from "../services/ButterflyServices";
+import CountrySelect from "../components/CountrySelect";
 
 const EditedButterfly = () => {
   const [FormData, setFormData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
- 
 
   // Simula cargar una mariposa específica por su ID
  // Esto es para la url, hace que que aparezca el id en el url
@@ -69,7 +68,7 @@ const EditedButterfly = () => {
       FormData={FormData}
       onChange={onChange}
       onSubmit={onSubmit}
-      data={paises}
+      data={setFormData.region}
       handleSelectionChange={handleSelectionChange}
       buttonLabel="Actualizar"
     />
