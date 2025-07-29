@@ -18,7 +18,7 @@ const CreateButterfly = () => {
     status: "",
     region: "",
     location: "",
-    imageUrl:""
+    imageUrl: "",
   });
 
   //Esto es para los input
@@ -46,7 +46,7 @@ const CreateButterfly = () => {
         status: "",
         region: "",
         location: "",
-        imageUrl: ""
+        imageUrl: "",
       });
     } catch (error) {
       console.error("Error al crear mariposa: ", error);
@@ -76,17 +76,9 @@ const CreateButterfly = () => {
     console.log("Región y ubicación actualizadas:", { region, location });
   };
 
-
-
-
   return (
     <>
-      <header className=" m-10">
-        <h2 className=" text-2xl sm:text-3xl lg:text-4xl text-[#28422B] mb-4">
-          🦋¡Añade una nueva especie!
-        </h2>
-        <TitleSection />
-      </header>
+      <TitleSection title="¡Añade una nueva especie!" />
 
       <CreateForm
         FormData={newButterfly} // el estado con todos los valores
