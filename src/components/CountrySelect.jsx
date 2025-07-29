@@ -52,7 +52,11 @@ const CountrySelect = ({data, onChange}) => {
   function cambiarRegion(evento) {
     setRegionSeleccionada(evento.target.value);
     setPaisSeleccionado(""); // Limpiar pais cuando cambia de region
-  onChange({ region, location: "" }); // Llama a CreateButterfly
+ const nuevaRegion = evento.target.value;
+setRegionSeleccionada(nuevaRegion);
+setPaisSeleccionado("");
+onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion 
+ 
 }
 
   function cambiarPais(evento) {
