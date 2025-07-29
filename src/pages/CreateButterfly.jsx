@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../index.css";
 import CreateForm from "../components/CreateForm";
 import { createNewButterfly } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
