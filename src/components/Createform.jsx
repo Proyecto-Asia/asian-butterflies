@@ -2,7 +2,7 @@ import Countryselect from "./CountrySelect";
 import Imageselector from "./Imageselector";
 import StatusSelector from "./StatusSelector";
 const Createform = ({
-  FormData,
+  FormData, 
   onChange,
   onSubmit,
   data,

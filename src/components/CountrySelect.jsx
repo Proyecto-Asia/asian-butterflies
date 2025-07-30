@@ -102,5 +102,3 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
 };
 
 export default CountrySelect;
-
-
