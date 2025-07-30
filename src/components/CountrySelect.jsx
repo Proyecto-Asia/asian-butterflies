@@ -72,9 +72,9 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
         id="region"
         value={regionSeleccionada}
         onChange={cambiarRegion}
-        className="rounded-md border border-mint-green-200 h-10 w-60 mt-2 text-mint-green-700 text-xs focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 px-3 py-2"
+        className="border border-gray-300 h-10 w-60"
       >
-        <option value="">-- Selecciona una región --</option>
+        <option value=""> --Seleccione una region--</option>
         <option value="">-- Elige una región --</option>
         {regiones.map((region) => (
           <option key={region} value={region}>
@@ -88,7 +88,7 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
         <select 
         value={paisSeleccionado} 
         onChange={cambiarPais}
-         className="rounded-md border border-mint-green-200 h-10 w-60 mb-3 text-mint-green-700 text-xs focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 px-3 py-2">
+         className="border border-gray-300 h-10 w-60">
           <option value="">-- Elige un país --</option>
           {regionData[regionSeleccionada].map((pais) => ( 
             <option key={pais} value={pais}>
@@ -102,5 +102,3 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
 };
 
 export default CountrySelect;
-
-

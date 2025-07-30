@@ -1,196 +1,178 @@
 import Countryselect from "./CountrySelect";
 import Imageselector from "./Imageselector";
 import StatusSelector from "./StatusSelector";
-import Buttons from "../components/Buttons";
-
-const CreateForm = ({
-  FormData,
+const Createform = ({
+  FormData, 
   onChange,
   onSubmit,
   data,
   handleSelectionChange,
-  isSubmitting = false // Nuevo prop para manejar el estado de envío
 }) => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        {/* Nombre */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="name-butterfly-input"
-            className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
-          >
-            Nombre:
-          </label>
-          <input
-            type="text"
-            name="name"
-            maxLength="40"
-            placeholder="Mariposa del Merge Infinito en Develop..."
-            value={FormData.name}
-            onChange={onChange}
-            className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+        <div className="font-segoe flex justify-center min-h-screen p-4">
+          <div className="w-400 p-4 sm:p-6 lg:p-8 pt-6 sm:pt-8 text-lg sm:text-xl bg-white rounded-md shadow-lg shadow-gray-700">
+            <div className="space-y-4 sm:space-y-6">
+              {/* Nombre */}
+              <div className="flex flex-col">
+                <label
+                  htmlFor="name-butterfly-input"
+                  className="text-[#28422B] mb-2 font-medium"
+                >
+                  Nombre:
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  maxLength="25"
+                  placeholder="Nombre de la mariposa..."
+                  value={FormData.name}
+                  onChange={onChange}
+                  className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-gray-300 focus:border-[#28422B] focus:outline-none"
+                  required
+                />
+              </div>
 
-        {/* Nombre científico */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="sci-name-butterfly-input"
-            className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
-          >
-            Nombre científico:
-          </label>
-          <input
-            type="text"
-            name="sciname"
-            maxLength="40"
-            value={FormData.sciname}
-            onChange={onChange}
-            placeholder="Morpho conflictus developensis.."
-            className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+              {/* Nombre científico */}
+              <div className="flex flex-col">
+                <label
+                  htmlFor="sci-name-butterfly-input"
+                  className="text-[#28422B] mb-2 font-medium"
+                >
+                  Nombre científico:
+                </label>
+                <input
+                  type="text"
+                  name="sciname"
+                  maxLength="40"
+                  value={FormData.sciname}
+                  onChange={onChange}
+                  placeholder="Nombre científico..."
+                  className="rounded-md w-full h-10 sm:h-12 bg-white px-3 border border-gray-300 focus:border-[#3D5B43] focus:outline-none"
+                  required
+                />
+              </div>
 
-        {/* Selección de país */}
-        <div>
-          <label className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
-            Selecciona el país de origen: <br />
-            <Countryselect 
-              datos={data} 
-              onChange={handleSelectionChange} 
-              disabled={isSubmitting}
-            />
-          </label>
-        </div>
+              {/* Selección de país */}
+              <div>
+                <label className="text-[#28422B]">
+                  Seleccione el país de origen: <br />
+                  <Countryselect
+                    datos={data}
+                    onChange={handleSelectionChange}
+                  />
+                </label>
+              </div>
 
-        {/* Descripción corta */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="description-butterfly-input"
-            className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
-          >
-            Resumen:
-          </label>
-          <input
-            type="text"
-            name="shortDescription"
-            maxLength="166"
-            placeholder="Haz una breve descripción..."
-            value={FormData.shortDescription}
-            onChange={onChange}
-            className="rounded-md w-full h-10 sm:h-24 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+              {/* Descripción corta */}
+              <div className="flex flex-col">
+                <label
+                  htmlFor="description-butterfly-input"
+                  className="text-[#3D5B43] mb-2 font-medium"
+                >
+                  Descripción:
+                </label>
+                <input
+                  type="text"
+                  name="shortDescription"
+                  maxLength="166"
+                  placeholder="Describe a la mariposa..."
+                  value={FormData.shortDescription}
+                  onChange={onChange}
+                  className="rounded-md w-full h-20 sm:h-24 bg-white px-3 py-2 border border-gray-300 focus:border-[#3D5B43] focus:outline-none"
+                  required
+                />
+              </div>
 
-        {/* Descripción larga */}
-        <div className="flex flex-col">
-          <label
-            htmlFor="long-description-butterfly-input"
-            className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
-          >
-            Descripción:
-          </label>
-          <textarea
-            name="longDescription"
-            maxLength="600"
-            placeholder="Describe la mariposa con pelos, alas y señales..."
-            value={FormData.longDescription}
-            onChange={onChange}
-            className="rounded-md w-full h-10 sm:h-40 bg-white px-3 border border-mint-green-200 focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 text-mint-green-700 mb-3"
-            required
-            disabled={isSubmitting}
-          />
-        </div>
+              {/* Descripción larga */}
+              <div className="flex flex-col">
+                <label
+                  htmlFor="long-description-butterfly-input"
+                  className="text-[#28422B] mb-2 font-medium"
+                >
+                  Más información relevante:
+                </label>
+                <textarea
+                  name="longDescription"
+                  maxLength="600"
+                  placeholder="Algo más que quieras agregar..."
+                  value={FormData.longDescription}
+                  onChange={onChange}
+                  className="rounded-md h-32 sm:h-40 w-full bg-white px-3 py-2 border border-gray-300 focus:border-[#3D5B43] focus:outline-none resize-none"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="butterflies-status">
+                  Estado actual de la mariposa: <br />
+                  <StatusSelector
+                    value={FormData.status}
+                    onChange={onChange}
+                  />
+                </label>
+              </div>
 
-        <div>
-          <label
-            htmlFor="butterflies-status"
-            className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe"
-          >
-            Estado de Conservación: <br />
-            <StatusSelector 
-              value={FormData.status} 
-              onChange={onChange} 
-              disabled={isSubmitting}
-            />
-          </label>
-        </div>
+              {/* Actividad (radio buttons) */}
+              <div className="flex flex-col">
+                <label className="text-[#3D5B43] mb-2 font-medium">
+                  ¿Diurna o nocturna?
+                </label>
+                <label htmlFor="radio-diurno">
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="1"
+                    checked={FormData.activity === "1"}
+                    onChange={onChange}
+                    className=""
+                  />{" "}
+                  Diurno
+                </label>
+                <label htmlFor="radio-nocturno">
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="0"
+                    checked={FormData.activity === "0"}
+                    onChange={onChange}
+                    className="mr-2 accent-[#28422B]"
+                  />
+                  Nocturno
+                </label>
+              </div>
 
-        {/* Actividad (radio buttons) */}
-        <div className="flex flex-col">
-          <label className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
-            Periodo de Actividad:
-          </label>
-          <label htmlFor="radio-diurno">
-            <input
-              type="radio"
-              name="activity"
-              value="1"
-              checked={FormData.activity === "1"}
-              onChange={onChange}
-              className="mr-2 text-mint-green-700 text-sm lg:text-lg font-segoe"
-              disabled={isSubmitting}
-            />
-            Diurna
-          </label>
-          <label htmlFor="radio-nocturno">
-            <input
-              type="radio"
-              name="activity"
-              value="0"
-              checked={FormData.activity === "0"}
-              onChange={onChange}
-              className="mr-2 text-mint-green-700 mb-3 text-sm lg:text-lg font-segoe"
-              disabled={isSubmitting}
-            />
-            Nocturna
-          </label>
-        </div>
+              {/* Subir imagen */}
+              <Imageselector
+                onUploadUrl={(url) =>
+                  onChange({ target: { name: "imageUrl", value: url } })
+                }
+              />
 
-        {/* Subir imagen */}
-        <Imageselector
-          onUploadUrl={(url) =>
-            onChange({ target: { name: "imageUrl", value: url } })
-          }
-          disabled={isSubmitting}
-        />
+              {/* Vista previa */}
+              {FormData.imageUrl && (
+                <img
+                  src={FormData.imageUrl}
+                  alt="Vista previa"
+                  className="mt-4 w-48 h-auto rounded shadow-md border"
+                />
+              )}
 
-        {/* Vista previa */}
-        {FormData.imageUrl && (
-          <img
-            src={FormData.imageUrl}
-            alt="Vista previa"
-            className="mt-4 w-48 h-auto rounded shadow-md border"
-          />
-        )}
-
-        {/* Botones */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 my-8">
-          <Buttons
-            type="submit"
-            styleType="primary"
-            text={isSubmitting ? "Creando..." : "Agregar"}
-            className="mt-8 ml-6"
-            disabled={isSubmitting}
-          />
-          <Buttons
-            styleType="secondary"
-            text="Cancelar"
-            linkTo="/butterflygrid"
-            className="mt-8 ml-6"
-            disabled={isSubmitting}
-          />
+              {/* Botón enviar */}
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
+                <button
+                  type="submit"
+                  className="rounded-md bg-[#ABBF60] w-full sm:w-28 h-10 sm:h-12 text-base sm:text-lg font-medium hover:bg-[#9AAF50] transition-colors"
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </>
   );
 };
 
-export default CreateForm;
+export default Createform;
