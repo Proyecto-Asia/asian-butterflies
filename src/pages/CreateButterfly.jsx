@@ -1,17 +1,17 @@
 
 import { useState, useEffect } from "react";
-import "../index.css";
-import Createform from "../components/Createform";
+import { useNavigate } from "react-router-dom";
+import CreateForm from "../components/CreateForm.jsx";
 import { createNewButterfly } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
+import { confirmAlert, successAlert, errorAlert } from "../components/Alerts";
+
 
 const CreateButterfly = () => {
-  //Poniendome a pensar, creo que colocare aqui son los datos que los voy a mandar al metodo POST
-  // Aqui se escribe la pare de react jsx, es decir, las animaciones
+  const navigate = useNavigate();
 
   const [newButterfly, setNewButterfly] = useState({
-    // inicializando el estado vacio
-    name: "", // Tutto los dato que estan dentro del JSON
+    name: "",
     sciname: "",
     shortDescription: "",
     longDescription: "",
@@ -19,55 +19,57 @@ const CreateButterfly = () => {
     status: "",
     region: "",
     location: "",
-    imageUrl:""
+    imageUrl: "",
   });
 
-  //Esto es para los input
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  // Cargar datos de países al montar el componente
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("http://localhost:3000/butterfly");
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos');
+        }
+        const countryData = await response.json();
+        setData(countryData);
+        console.log("Datos cargados:", countryData);
+      } catch (error) {
+        console.error("Error al cargar:", error);
+        errorAlert({
+          title: "Error de carga",
+          message: "No se pudieron cargar los datos de países. Por favor, recarga la página e intenta de nuevo."
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCountryData();
+  }, []);
+
+  // Scroll al inicio al montar el componente
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  // Manejar cambios en los inputs
   const controlarInput = (e) => {
-    //actuliza el input que le das click
-    const { name, value } = e.target; //
+    const { name, value } = e.target;
     setNewButterfly({
-      ...newButterfly, // Me evita escribir como todo el objeto de los inputs otra vez
+      ...newButterfly,
       [name]: value,
     });
   };
 
-  const manejarEnvio = async (e) => {
-    e.preventDefault(); // Evita que recargue la pagina
-
-    try {
-      await createNewButterfly(newButterfly);
-      alert("🦋 Mariposa creada con éxito");
-      setNewButterfly({
-        name: "", // Tutto los dato que estan dentro del JSON
-        sciname: "",
-        shortDescription: "",
-        longDescription: "",
-        activity: "",
-        status: "",
-        region: "",
-        location: "",
-        imageUrl: ""
-      });
-    } catch (error) {
-      console.error("Error al crear mariposa: ", error);
-      alert("⚠️ Ocurrió un error al crear la mariposa.");
-    }
-  };
-  // ahora viene lo de agarrar el valor de los dropdown de los paises
-
-  const [data, setData] = useState([]); // Al colocar algo nuevo, se debe colocar ajuro el useState
-  useEffect(() => {
-    fetch("http://localhost:3000/butterfly")
-      .then((res) => res.json()) // Corregido: era
-      .then((data) => {
-        setData(data);
-        console.log("Datos cargados:", data);
-      })
-      .catch((err) => console.error("Error al cargar:", err));
-  }, []); // Dependencias vacías para evitar loop infinito
-
-  // Manejar cambios en el dropdown de países - AQUÍ SE GUARDAN EN newButterfly
+  // Manejar cambios en el dropdown de países
   const handleSelectionChange = ({ region, location }) => {
     setNewButterfly({
       ...newButterfly,
@@ -77,25 +79,112 @@ const CreateButterfly = () => {
     console.log("Región y ubicación actualizadas:", { region, location });
   };
 
+  // Validar que todos los campos estén completos
+  const validateForm = () => {
+    const requiredFields = [
+      'name', 'sciname', 'shortDescription', 'longDescription', 
+      'activity', 'status', 'region', 'location', 'imageUrl'
+    ];
+    
+    for (const field of requiredFields) {
+      if (!newButterfly[field] || newButterfly[field].trim() === '') {
+        return false;
+      }
+    }
+    return true;
+  };
 
+  // Resetear formulario
+  const resetForm = () => {
+    setNewButterfly({
+      name: "",
+      sciname: "",
+      shortDescription: "",
+      longDescription: "",
+      activity: "",
+      status: "",
+      region: "",
+      location: "",
+      imageUrl: "",
+    });
+  };
 
+  // Manejar envío del formulario
+  const manejarEnvio = async (e) => {
+    e.preventDefault();
+
+    // Validar formulario
+    if (!validateForm()) {
+      errorAlert({
+        title: "Formulario incompleto",
+        message: "Por favor, completa todos los campos antes de continuar."
+      });
+      return;
+    }
+
+    // Confirmar antes de crear
+    const shouldCreate = await confirmAlert({
+      title: "Crear nueva mariposa",
+      message: `¿Estás segura de que quieres crear la mariposa "${newButterfly.name}"?`,
+      confirmText: "Sí, crear",
+      cancelText: "Cancelar"
+    });
+
+    if (!shouldCreate) {
+      return; // Si cancela, no hacer nada
+    }
+
+    try {
+      setSubmitting(true);
+      await createNewButterfly(newButterfly);
+      
+      // Mostrar alerta de éxito
+      await successAlert({
+        title: "¡Mariposa creada!",
+        message: `La mariposa "${newButterfly.name}" ha sido añadida exitosamente a la colección.`
+      });
+      
+      // Resetear formulario y navegar
+      resetForm();
+      navigate("/butterflygrid");
+      
+    } catch (error) {
+      console.error("Error al crear mariposa:", error);
+      errorAlert({
+        title: "Error al crear",
+        message: "Ocurrió un error al crear la mariposa. Por favor, verifica los datos e intenta de nuevo."
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Mostrar loading mientras cargan los datos
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-mint-green-700 text-lg font-segoe">
+          Cargando datos... 
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
-      <header className=" m-10">
-        <h2 className=" text-2xl sm:text-3xl lg:text-4xl text-[#28422B] mb-4">
-          🦋¡Añade una nueva especie!
-        </h2>
-        <TitleSection />
-      </header>
-
-      <Createform
-        FormData={newButterfly} // el estado con todos los valores
-        onChange={controlarInput} //Manejar cambios en los inputs
-        onSubmit={manejarEnvio} // La funcion para manejar el envio del formulario
-        data={data}
-        handleSelectionChange={handleSelectionChange}
-      />
+      <section>
+        <TitleSection title="¡Añade una nueva especie!" />
+        <div className="mx-8">
+          <CreateForm
+            FormData={newButterfly}
+            onChange={controlarInput}
+            onSubmit={manejarEnvio}
+            data={data}
+            handleSelectionChange={handleSelectionChange}
+            isSubmitting={submitting}
+          />
+        </div>
+      </section>
     </>
   );
 };

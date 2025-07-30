@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import TitleSection from "../components/TitleSection";
-
+import Buttons from '../components/Buttons';
 const Contact = () => {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -30,14 +30,9 @@ const Contact = () => {
   };
 
   return (
-     <div  className="min-h-screen bg-gray-100 font-segoe">
+     <>
       {/* Header */}
-      <header className="px-4 sm:px-8 lg:px-16 pt-8 pb-4">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#28422B] mb-4">
-          ¿Quieres añadir algo? ¡Contáctanos! 📧
-        </h2>
-        <TitleSection />
-      </header>
+      <TitleSection title="Contáctanos:" />
 
       {/* Contenedor principal centrado */}
       <div className="flex justify-center px-4 pb-16">
@@ -111,15 +106,12 @@ const Contact = () => {
             </div>
 
             {/* Botón Enviar */}
-            <div className="pt-6">
-              <button
-                type="button"
+      
+              <Buttons
+                styleType="primary"
+                text={"Enviar"}
                 onClick={handleSubmit}
-                className="w-full bg-[#28422B] text-white font-medium py-3 px-6 rounded-md hover:bg-[#3D5B43] focus:outline-none focus:ring-2 focus:ring-[#28422B] focus:ring-opacity-50 transition-colors duration-200"
-              >
-                Enviar
-              </button>
-            </div>
+              />
 
             {/* Nota informativa */}
             <div className="text-center pt-4 border-t border-gray-100">
@@ -130,7 +122,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
