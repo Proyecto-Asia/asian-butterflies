@@ -1,12 +1,13 @@
-import Countryselect from "./CountrySelect";
+import CountrySelect from "./CountrySelect";
 import Imageselector from "./Imageselector";
 import StatusSelector from "./StatusSelector";
+import Buttons from "./Buttons";
+
 
 const EditForm = ({
   FormData,
   onChange,
   onSubmit,
-  data = [], // datos para países, por defecto array vacío
   handleSelectionChange,
   buttonLabel = "Guardar cambios",
 }) => {
@@ -51,7 +52,8 @@ const EditForm = ({
             <div>
               <label className="text-[#28422B]">
                 Seleccione el país de origen: <br />
-                <Countryselect datos={data} onChange={handleSelectionChange} value={{ region: FormData.region, location: FormData.location }} />
+                <CountrySelect onChange={handleSelectionChange}
+                  value={{ region: FormData.region, location: FormData.location }} />
               </label>
             </div>
 
@@ -137,13 +139,11 @@ const EditForm = ({
             )}
 
             {/* Botón */}
-            <div className="flex justify-center pt-6">
-              <button
-                type="submit"
-                className="rounded-md bg-[#ABBF60] w-full sm:w-32 h-10 sm:h-12 text-base sm:text-lg font-medium hover:bg-[#9AAF50] transition-colors"
-              >
-                {buttonLabel}
-              </button>
+           <div className="flex justify-center pt-6">
+              <Buttons
+                styleType="primary"
+                text={buttonLabel}
+              />
             </div>
           </div>
         </div>

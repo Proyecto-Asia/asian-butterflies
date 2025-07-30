@@ -1,7 +1,7 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CountrySelect = ({data, onChange}) => {
+const CountrySelect = ( { onChange, value } ) => {
   const [regionSeleccionada, setRegionSeleccionada] = useState();
   const [paisSeleccionado, setPaisSeleccionado] = useState();
   const regionData = {
@@ -52,6 +52,8 @@ const CountrySelect = ({data, onChange}) => {
   function cambiarRegion(evento) {
     setRegionSeleccionada(evento.target.value);
     setPaisSeleccionado(""); // Limpiar pais cuando cambia de region
+
+
  const nuevaRegion = evento.target.value;
 setRegionSeleccionada(nuevaRegion);
 setPaisSeleccionado("");
@@ -64,6 +66,12 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
   setPaisSeleccionado(location);
   onChange({ region: regionSeleccionada, location }); // Llama a CreateButterfly
 }
+  useEffect(() => {
+    if (value) {
+      setRegionSeleccionada(value.region);
+      setPaisSeleccionado(value.location);
+    }
+  }, [value]);
 
   return (
     <>
@@ -72,10 +80,9 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
         id="region"
         value={regionSeleccionada}
         onChange={cambiarRegion}
-        className="border border-gray-300 h-10 w-60"
+        className="font-segoe text-mint-green-700 rounded-md h-10 px-3 min-w-2xs bg-white border border-mint-green-100 focus:border-mint-green-700 focus:outline-none"
       >
         <option value=""> --Seleccione una region--</option>
-        <option value="">-- Elige una región --</option>
         {regiones.map((region) => (
           <option key={region} value={region}>
             {region}
@@ -83,18 +90,21 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
         ))}
       </select>
       <br /><br />
-      {/* Aqui se esta recorriendo el valor de lo que esta dentro del regionData*/}
-      {regionSeleccionada && (
-        <select 
-        value={paisSeleccionado} 
-        onChange={cambiarPais}
-         className="border border-gray-300 h-10 w-60">
+      <label className="font-segoe text-mint-green-700 font-medium">
+        Seleccione el país de origen:
+      </label>
+      <br />
+      {regionSeleccionada && regionData[regionSeleccionada] && (
+        <select
+          value={paisSeleccionado}
+          onChange={cambiarPais}
+          className="font-segoe text-mint-green-700 rounded-md h-10 px-3 min-w-2xs bg-white border border-mint-green-100 focus:border-mint-green-700 focus:outline-none"
+        >
           <option value="">-- Elige un país --</option>
-          {regionData[regionSeleccionada].map((pais) => ( 
-            <option key={pais} value={pais}>
-              {pais}
-            </option>
-          ))}
+          {regionData[regionSeleccionada].map((location) => (
+            <option key={location} value={location}>
+              {location}
+            </option>))}
         </select>
       )}
     </>
