@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import CreateForm from "../components/CreateForm.jsx";
+import CreateForm from "../components/CreateForm";
 import { createNewButterfly } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
 import { confirmAlert, successAlert, errorAlert } from "../components/Alerts";
