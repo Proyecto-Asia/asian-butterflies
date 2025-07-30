@@ -1,15 +1,15 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditForm from "../components/EditForm";
 import { EditButterfly, getOneButterfly } from "../services/ButterflyServices";
 import CountrySelect from "../components/CountrySelect";
 import { useParams, useNavigate } from "react-router-dom";
 import TitleSection from "../components/TitleSection";
-import { successAlert, errorAlert } from "./Alerts";
+import { successAlert, errorAlert } from "../components/Alerts";
 
 const EditedButterfly = () => {
   const [FormData, setFormData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+   const navigate = useNavigate();
 
   // Simula cargar una mariposa específica por su ID
  // Esto es para la url, hace que que aparezca el id en el url
@@ -75,7 +75,7 @@ const EditedButterfly = () => {
 
   if (isLoading || !FormData) return <p>Cargando datos...</p>;
 
-  const navigate = useNavigate();
+ 
   
 
   return (
