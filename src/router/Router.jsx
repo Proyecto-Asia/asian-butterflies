@@ -12,7 +12,7 @@ const routerButterfly = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-     {
+      {
         index: true,
         element: <Home />,
       },
