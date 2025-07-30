@@ -46,6 +46,20 @@ const CountrySelect = ( { onChange, value } ) => {
       "Mongolia",
       "Taiwán",
     ],
+    "Sudeste Asiático": [
+      "Birmania",
+      "Brunéi",
+      "Camboya",
+      "Filipinas",
+      "Indonesia",
+      "Laos",
+      "Malasia",
+      "Singapur",
+      "Tailandia",
+      "Timor Oriental",
+      "Vietnam",
+      "Myanmar"
+    ]
   }; // Final de los objetos
 
   const regiones = Object.keys(regionData); // seleccionando las keys ej. Asia Oriental
@@ -75,14 +89,14 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
 
   return (
     <>
-      <select
+     <select
         name="region"
         id="region"
         value={regionSeleccionada}
         onChange={cambiarRegion}
-        className="font-segoe text-mint-green-700 rounded-md h-10 px-3 min-w-2xs bg-white border border-mint-green-100 focus:border-mint-green-700 focus:outline-none"
+        className="rounded-md border border-mint-green-200 h-10 w-60 mt-2 text-mint-green-700 text-xs focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 px-3 py-2"
       >
-        <option value=""> --Seleccione una region--</option>
+        <option value="">-- Selecciona una región --</option>
         {regiones.map((region) => (
           <option key={region} value={region}>
             {region}
@@ -92,19 +106,20 @@ onChange({ region: nuevaRegion, location: "" }); // Usamos nuevaRegion
       <br /><br />
       <label className="font-segoe text-mint-green-700 font-medium">
         Seleccione el país de origen:
-      </label>
-      <br />
-      {regionSeleccionada && regionData[regionSeleccionada] && (
-        <select
-          value={paisSeleccionado}
-          onChange={cambiarPais}
-          className="font-segoe text-mint-green-700 rounded-md h-10 px-3 min-w-2xs bg-white border border-mint-green-100 focus:border-mint-green-700 focus:outline-none"
-        >
+      </label><br />
+      {/* Aqui se esta recorriendo el valor de lo que esta dentro del regionData*/}
+      {regionSeleccionada && (
+        
+        <select 
+        value={paisSeleccionado} 
+        onChange={cambiarPais}
+         className="rounded-md border border-mint-green-200 h-10 w-60 mb-3 text-mint-green-700 text-xs focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 px-3 py-2">
           <option value="">-- Elige un país --</option>
-          {regionData[regionSeleccionada].map((location) => (
+          {regionData[regionSeleccionada].map((location) => ( 
             <option key={location} value={location}>
               {location}
-            </option>))}
+            </option>
+          ))}
         </select>
       )}
     </>

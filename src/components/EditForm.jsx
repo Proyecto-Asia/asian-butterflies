@@ -1,5 +1,5 @@
 import CountrySelect from "./CountrySelect";
-import Imageselector from "./Imageselector";
+import ImageSelector from "./ImageSelector";
 import StatusSelector from "./StatusSelector";
 import Buttons from "./Buttons";
 
@@ -125,7 +125,7 @@ const EditForm = ({
             </div>
 
             {/* Imagen */}
-            <Imageselector
+            <ImageSelector
               onUploadUrl={(url) =>
                 onChange({ target: { name: "imageUrl", value: url } })
               }
