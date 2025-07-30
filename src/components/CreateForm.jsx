@@ -1,4 +1,4 @@
-import Countryselect from "./CountrySelect";
+import CountrySelect from "./CountrySelect";
 import ImageSelector from "./ImageSelector";
 import StatusSelector from "./StatusSelector";
 import Buttons from "./Buttons";
@@ -59,7 +59,7 @@ const CreateForm = ({
         <div>
           <label className="font-bold text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
             Selecciona el país de origen: <br />
-            <Countryselect
+            <CountrySelect
               datos={data}
               onChange={handleSelectionChange}
               disabled={isSubmitting}

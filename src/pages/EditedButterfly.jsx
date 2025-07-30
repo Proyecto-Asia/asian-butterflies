@@ -9,10 +9,10 @@ import { successAlert, errorAlert } from "../components/Alerts";
 const EditedButterfly = () => {
   const [FormData, setFormData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Simula cargar una mariposa específica por su ID
- // Esto es para la url, hace que que aparezca el id en el url
+  // Esto es para la url, hace que que aparezca el id en el url
   const { id } = useParams();
   console.log("ID obtenido de la URL:", id);
 
@@ -51,7 +51,7 @@ const EditedButterfly = () => {
     setFormData({ ...FormData, [name]: value });
   };
 
-  const handleSelectionChange = ({region, location}) => {
+  const handleSelectionChange = ({ region, location }) => {
     setFormData({ ...FormData, region, location });
   };
 
@@ -75,20 +75,21 @@ const EditedButterfly = () => {
 
   if (isLoading || !FormData) return <p>Cargando datos...</p>;
 
- 
-  
+
+
 
   return (
-   <>
+    <>
       <TitleSection title="Editar Mariposa" />
-      <EditForm
-        FormData={FormData}
-        onChange={onChange}
-        onSubmit={onSubmit}
-        data={FormData}
-        handleSelectionChange={handleSelectionChange}
-        buttonLabel="Actualizar"
-      />
+      <div className="mx-8">
+        <EditForm
+          FormData={FormData}
+          onChange={onChange}
+          onSubmit={onSubmit}
+          data={FormData}
+          handleSelectionChange={handleSelectionChange}
+        />
+      </div>
     </>
   );
 };

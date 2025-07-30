@@ -29,7 +29,7 @@ function NavBar() {
                 )}</button>
                 <ul className="hidden md:flex gap-8 justify-items-end text-lg">
                     <li><Link to="/" className="hover:bg-mint-green-800 px-4 py-2 rounded-4xl">Inicio</Link></li>
-                    <li><Link to="/ButterflyGrid" className="hover:bg-mint-green-800 px-4 py-2 rounded-4xl">Galería</Link></li>
+                    <li><Link to="/butterflyGrid" className="hover:bg-mint-green-800 px-4 py-2 rounded-4xl">Galería</Link></li>
                     <li><Link to="/newbutterfly" className="hover:bg-mint-green-800 px-4 py-2 rounded-4xl">Crear nueva</Link></li>
                     <li><Link to="/contact" className="hover:bg-mint-green-800 px-4 py-2 rounded-4xl">Contacto</Link></li>
                 </ul>
@@ -37,7 +37,7 @@ function NavBar() {
             {isOpen && (
                 <ul className="md:hidden mx-6 absolute top-22 left-0 right-0 flex flex-col text-lg z-50 bg-mint-green-700 text-white font-segoe font-bold rounded-2xl pt-4 pb-4">
                     <li><Link to="/" onClick={() => setIsOpen(false)} className="active:bg-mint-green-800 hover:bg-mint-green-800 block w-full text-center px-4 py-2 rounded-4xl">Inicio</Link></li>
-                    <li><Link to="/ButterflyGrid" onClick={() => setIsOpen(false)} className="active:bg-mint-green-800 hover:bg-mint-green-800 block w-full text-center px-4 py-2 rounded-4xl">Galería</Link></li>
+                    <li><Link to="/butterflyGrid" onClick={() => setIsOpen(false)} className="active:bg-mint-green-800 hover:bg-mint-green-800 block w-full text-center px-4 py-2 rounded-4xl">Galería</Link></li>
                     <li><Link to="/newbutterfly" onClick={() => setIsOpen(false)} className="active:bg-mint-green-800 hover:bg-mint-green-800 block w-full text-center px-4 py-2 rounded-4xl">Crear nueva</Link></li>
                     <li><Link to="/contact" onClick={() => setIsOpen(false)} className="active:bg-mint-green-800 hover:bg-mint-green-800 block w-full text-center px-4 py-2 rounded-4xl">Contacto</Link></li>
                 </ul>
