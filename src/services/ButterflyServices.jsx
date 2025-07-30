@@ -36,7 +36,7 @@ export const EditButterfly = async (data) => {
   try {
   
     console.log("Intentando actualizar mariposa:", data);
-    const response = await axios.put(`${URL_API}/${data.id}`, data);
+    const response = await axios.put(`${URL_API}${data.id}`, data);
 
     return response.data;
   } catch (error) {

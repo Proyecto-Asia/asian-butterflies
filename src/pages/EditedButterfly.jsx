@@ -1,12 +1,15 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditForm from "../components/EditForm";
 import { EditButterfly, getOneButterfly } from "../services/ButterflyServices";
 import CountrySelect from "../components/CountrySelect";
+import { useParams, useNavigate } from "react-router-dom";
+import TitleSection from "../components/TitleSection";
+import { successAlert, errorAlert } from "../components/Alerts";
 
 const EditedButterfly = () => {
   const [FormData, setFormData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+   const navigate = useNavigate();
 
   // Simula cargar una mariposa específica por su ID
  // Esto es para la url, hace que que aparezca el id en el url
@@ -28,6 +31,7 @@ const EditedButterfly = () => {
           status: butterfly.status || "",
           activity: butterfly.activity || "",
           region: butterfly.region || "",
+          location: butterfly.location || "",
           imageUrl: butterfly.imageUrl || "",
           id: butterfly.id || id, // aseguramos id
         });
@@ -47,31 +51,45 @@ const EditedButterfly = () => {
     setFormData({ ...FormData, [name]: value });
   };
 
-  const handleSelectionChange = (e) => {
-    setFormData({ ...FormData, region: e.target.value });
+  const handleSelectionChange = ({region, location}) => {
+    setFormData({ ...FormData, region, location });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       await EditButterfly(FormData);
-      alert("¡Mariposa actualizada con éxito!");
+      successAlert({
+        title: `¡Mariposa actualizada con éxito!`,
+        message: `¡Mariposa actualizada con éxito!`,
+      });
+      //alert("¡Mariposa actualizada con éxito!");
+      navigate(`/butterflydetails/${FormData.id}`);
     } catch (error) {
-      alert("Error al actualizar mariposa.");
+      errorAlert({
+        title: "Error",
+        message: "Error al actualizar mariposa."
+      });
     }
   };
 
   if (isLoading || !FormData) return <p>Cargando datos...</p>;
 
+ 
+  
+
   return (
-    <EditForm
-      FormData={FormData}
-      onChange={onChange}
-      onSubmit={onSubmit}
-      data={setFormData.region}
-      handleSelectionChange={handleSelectionChange}
-      buttonLabel="Actualizar"
-    />
+   <>
+      <TitleSection title="Editar Mariposa" />
+      <EditForm
+        FormData={FormData}
+        onChange={onChange}
+        onSubmit={onSubmit}
+        data={FormData}
+        handleSelectionChange={handleSelectionChange}
+        buttonLabel="Actualizar"
+      />
+    </>
   );
 };
 

@@ -1,6 +1,4 @@
-import { useState } from "react"; // Importamos el hook useState de React para manejar estado
-
-function StatusSelector({FormData, value, onChange}) {
+function StatusSelector({value, onChange}) {
  
   const statusData = {
     "status": [
@@ -16,9 +14,9 @@ function StatusSelector({FormData, value, onChange}) {
       name="status" // tiene que coincidir con el nombre que esta en el json
       value={value}
       onChange={onChange}
-      className="border border-gray-300 h-10 w-60 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="rounded-md border border-mint-green-200 h-10 w-60 mt-2 text-mint-green-700 text-sm focus:border-mint-green-600 focus:outline-2vw outline-mint-green-200 px-3 py-2 mb-3"
     >
-      <option value="">--Seleccione una opción--</option>
+      <option value="">-- Selecciona una opción --</option>
       {statusData.status.map((status) => (
         <option key={status.value} value={status.value}>
           {status.label}
