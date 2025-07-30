@@ -37,16 +37,16 @@
       "imageUrl": "https://hablemosdeinsectos.com/wp-content/uploads/2017/08/mariposa-azul-1-1024x768.jpg"
     },
     {
-      "id": "5",
       "name": "Mariposa Hoja Seca",
       "sciname": "Kallima paralekta",
       "shortDescription": "Maestra del camuflaje, sus alas cerradas imitan perfectamente una hoja seca marchita.",
       "longDescription": "La Kallima paralekta es famosa por su extraordinario mimetismo. Cuando cierra sus alas, se vuelve prácticamente invisible al imitar una hoja seca caída, completa con 'nervaduras', manchas marrones y hasta agujeros simulados causados por insectos. Esta adaptación evolutiva la protege eficazmente de depredadores visuales. En contraste, el interior de sus alas muestra colores brillantes naranjas y azules. Habita en bosques tropicales húmedos donde se alimenta de frutas fermentadas y raramente visita flores.",
-      "activity": "1",
       "status": "1",
+      "activity": "1",
       "region": "Sudeste Asiático",
-      "location": "Myanmar",
-      "imageUrl": "https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/4UMHVZSYVZBT3F4XTWHCA24VCQ.png"
+      "location": "Filipinas",
+      "imageUrl": "https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/4UMHVZSYVZBT3F4XTWHCA24VCQ.png",
+      "id": "5"
     },
     {
       "id": "6",
@@ -59,6 +59,18 @@
       "region": "Asia del Sur",
       "location": "Nepal",
       "imageUrl": "https://live.staticflickr.com/65535/50918024782_6b20efc825_b.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Mariposa Lunar China",
+      "sciname": "Actias ningpoensis",
+      "shortDescription": "Mariposa nocturna de color verde pálido con elegantes colas en sus alas posteriores.",
+      "longDescription": "La Actias ningpoensis es una polilla grande y hermosa que emerge solo durante las noches cálidas de primavera y verano. Sus alas verde pálido con intrincados patrones y largas colas la hacen inconfundible. Los machos tienen antenas plumosas más desarrolladas para detectar las feromonas de las hembras desde grandes distancias. Como muchas polillas grandes, los adultos no se alimentan y viven solo unas pocas semanas dedicadas exclusivamente a la reproducción. Las orugas se alimentan de hojas de diversos árboles caducifolios y pasan el invierno como pupas.",
+      "activity": "0",
+      "status": "0",
+      "region": "Asia Oriental",
+      "location": "China",
+      "imageUrl": "https://www.thespruce.com/thmb/XoK9QcIOTWP09yDkYEXIkqzsloE=/2560x0/filters:no_upscale():max_bytes(150000):strip_icc()/85455257-56a709dc5f9b58b7d0e6347e.jpg"
     },
     {
       "id": "8",
@@ -311,90 +323,7 @@
       "region": "Asia Oriental",
       "location": "Corea del Sur",
       "imageUrl": "https://www.ifoundbutterflies.org/sites/default/files/2022-10/img_20220930_175753.jpg"
-    },
-    {
-      "id": "e922",
-      "name": "dededede",
-      "sciname": "dedede",
-      "shortDescription": "dejdejdejde",
-      "longDescription": "ededeededeedd",
-      "activity": "nocturno",
-      "status": "",
-      "region": "Asia del Norte",
-      "location": "Corea del Norte",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753614111/narnym8dyg16cc6squne.png"
-    },
-    {
-      "id": "2606",
-      "name": "Mariposa azul",
-      "sciname": "Luminito",
-      "shortDescription": "Es una mariposa con 2 alas ",
-      "longDescription": "DCKDCd",
-      "activity": "nocturno",
-      "status": "",
-      "region": "Asia del Norte",
-      "location": "Mongolia",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753634552/vayboo5hqrkbmcur1taq.png"
-    },
-    {
-      "id": "52e3",
-      "name": "cambio a diurno ",
-      "sciname": "no se si funcione",
-      "shortDescription": "hoalala",
-      "longDescription": "mjwdwdjdjms",
-      "activity": "diurno",
-      "status": "",
-      "region": "Asia del Sur",
-      "location": "Afganistán",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753658812/lfnzt8fzphxez4kerlzx.png"
-    },
-    {
-      "id": "8a20",
-      "name": "hoohonfgk",
-      "sciname": "xjkssadjaw",
-      "shortDescription": "kasldawdjwksdsd",
-      "longDescription": "ksdjaldawldw",
-      "activity": "nocturno",
-      "status": "",
-      "region": "Asia del Norte",
-      "location": "Corea del Norte",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753685677/ssvzfabik5wjc8xejupr.png"
-    },
-    {
-      "id": "ce97",
-      "name": "dkcmdckmdcwekl",
-      "sciname": "hola ocm oesras",
-      "shortDescription": "swdeee",
-      "longDescription": "ekwewjnekfwefj",
-      "activity": "nocturno",
-      "status": "",
-      "region": "Asia del Sur",
-      "location": "Bangladesh",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753700456/yjxtoyshgglyqdiozuoh.png"
-    },
-    {
-      "id": "9763",
-      "name": "xsxsxsxsxsxsx",
-      "sciname": "xxsxsxsxsxsx",
-      "shortDescription": "xsxsxsxsx",
-      "longDescription": "ssxssx",
-      "activity": "1",
-      "status": "",
-      "region": "Asia del Norte",
-      "location": "China",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753703040/ph88wuz7tuv6farm770z.png"
-    },
-    {
-      "id": "f90b",
-      "name": "cckdqwouqwiodj",
-      "sciname": "wkawsilkqwlijdqaowkdal",
-      "shortDescription": "cdcdcdcdcdcdcc",
-      "longDescription": "xssxxssxsxdc",
-      "activity": "0",
-      "status": "",
-      "region": "Asia del Sur",
-      "location": "Bangladesh",
-      "imageUrl": "https://res.cloudinary.com/dvykzqjt6/image/upload/v1753703080/mvaztsf37oqsoaxn720z.png"
     }
+    
   ]
 }
