@@ -13,13 +13,13 @@ const ButterflyIntroReut = ({title, image, children}) => {
               </header>
          )}
 
-              <section className="flex flex-col 2xl:flex-row justify-center items-center xl:gap-30 p-8 ">
+              <section className="flex flex-col 2xl:flex-row justify-center items-center xl:gap-32 p-4 md:p-8 ">
                 <div className="flex justify-center items-center 2xl:order-1">
                   <img src={image} alt="Mariposa asiática" className="max-w-[200px] mb-6 md:max-w-[400px] lg:max-w-[500px] h-auto animate-flotar" />
                 </div>
         
-                <div className="max-w-2xl 2xl:order-2">
-                  <div className=" text-center md:text-left ml-4 xl:ml-26 mr-2 md:mr-4">
+                <div className="w-full max-w-2xl 2xl:w-1/2 2xl:order-2">
+                  <div className=" text-center md:text-left px-4 md:px-6 lg:px-10">
                     <p className="font-segoe text-mint-green-700 text-sm lg:text-lg leading-relaxed opacity-0 animate-fade-in animation-delay-500">
                       {children}
                     </p>
