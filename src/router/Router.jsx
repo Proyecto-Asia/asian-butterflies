@@ -12,7 +12,7 @@ const routerButterfly = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-     {
+      {
         index: true,
         element: <Home />,
       },
@@ -21,7 +21,7 @@ const routerButterfly = createBrowserRouter([
         element: <CreateButterfly />,
       },
       {
-        path: "/editbutterfly:id",
+        path: "/editbutterfly/:id",
         element: <EditedButterfly />,
       },
       {
