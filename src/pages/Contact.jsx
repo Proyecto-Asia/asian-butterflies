@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TitleSection from "../components/TitleSection";
 import Buttons from '../components/Buttons';
+import { successAlert, errorAlert } from '../components/Alerts';
 const Contact = () => {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -19,9 +20,24 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Datos del formulario:', formData);
+
+      if (
+    !formData.nombre.trim() ||
+    !formData.correo.trim() ||
+    !formData.comentario.trim()
+  ) {
+   
+    errorAlert({
+           title: `¡Necesitas rellenar el formulario!`,
+           message: `Por favor, coloca los datos requeridos`,
+         });
+    return;
+  }
     // Aquí iría la lógica para enviar el formulario
-    alert('¡Mensaje enviado correctamente!');
-    // Resetear formulario
+         successAlert({
+           title: `¡Mensaje enviado con éxito!`,
+           message: `¡Gracias por su comentario!`,
+         });
     setFormData({
       nombre: '',
       correo: '',
@@ -35,8 +51,10 @@ const Contact = () => {
       <TitleSection title="Contáctanos:" />
 
       {/* Contenedor principal centrado */}
+      <form className="p-6 space-y-6" onSubmit={handleSubmit}>
+
       <div className="flex justify-center px-4 pb-16">
-        <div className="w-200 bg-white rounded-lg shadow-lg border text-[20px] border-gray-200">
+        <div className="w-400 bg-white rounded-lg  text-[20px] border-gray-200">
           
         
 
@@ -106,13 +124,14 @@ const Contact = () => {
             </div>
 
             {/* Botón Enviar */}
-      
+             <div className="flex justify-center">
               <Buttons
                 styleType="primary"
                 text={"Enviar"}
                 onClick={handleSubmit}
+                type="submit"
               />
-
+              </div>
             {/* Nota informativa */}
             <div className="text-center pt-4 border-t border-gray-100">
               <p className="text-sm text-gray-500">
@@ -122,6 +141,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      </form>
     </>
   );
 };
