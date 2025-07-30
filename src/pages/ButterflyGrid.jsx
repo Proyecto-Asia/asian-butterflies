@@ -96,7 +96,7 @@ useEffect(() => {
           <button
             onClick={prevPage}
             disabled={currentPage === 1}
-            className={`py-3 px-6 rounded-lg font-segoe font-semibold border-2 outline transition-colors duration-200 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
+            className={`py-3 px-6 rounded-lg font-segoe font-semibold border-2 outline shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
               currentPage === 1
                 ? "bg-gray-200 text-gray-300 cursor-not-allowed"
                 : "bg-mint-green-600 text-white cursor-pointer"
@@ -111,7 +111,7 @@ useEffect(() => {
               <button
                 key={index + 1}
                 onClick={() => goToPage(index + 1)}
-                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg font-segoe font-semibold cursor-pointer border-2  transition-colors duration-200 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg font-segoe font-semibold cursor-pointer border-2 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
                   currentPage === index + 1
                     ? "bg-mint-green-600 text-white"
                     : "bg-white text-mint-green-600"
@@ -126,7 +126,7 @@ useEffect(() => {
           <button
             onClick={nextPage}
             disabled={currentPage === totalPages}
-            className={`py-3 px-6 rounded-lg font-segoe font-semibold border-2 outline transition-colors duration-200 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
+            className={`py-3 px-6 rounded-lg font-segoe font-semibold border-2 outline shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200 ${
               currentPage === totalPages
                 ? "bg-gray-200 text-gray-300 cursor-not-allowed"
                 : "bg-mint-green-600 text-white cursor-pointer"

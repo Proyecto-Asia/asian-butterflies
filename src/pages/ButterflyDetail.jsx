@@ -6,6 +6,7 @@ import {
 } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
 import Buttons from "../components/Buttons";
+import { confirmAlert, successAlert, errorAlert } from "../components/Alerts";
 
 // useState - Estados del componente
 const ButterflyDetail = () => {
@@ -36,24 +37,36 @@ const ButterflyDetail = () => {
 
   // Función para ELIMINAR
   const handleDelete = async () => {
-    const confirmDelete = window.confirm(
-      //poner aquí alertas mariany??
-      `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`
-    );
-    if (!confirmDelete) {//la exclamación lo que hace es invertir el valor de la constante
-      return; //Si el usuario cancela no se hace nada
+    const result = await confirmAlert({
+      title: "Confirmar eliminación",
+      message: `¿Estás segura de que quieres eliminar la mariposa "${butterfly.name}"? Esta acción no se puede deshacer.`,
+      confirmText: "Sí, eliminar",
+      cancelText: "Cancelar"
+    });
+
+    if (!result) {
+      return; // Si el usuario cancela no se hace nada
     }
+
     try {
-      setDeleting(true); //Activa estado de eliminación
-      await deleteButterfly(id); //llama al servicio de eliminación - metodo delete en services
-      alert(`La mariposa "${butterfly.name}" ha sido eliminada.`);
+      setDeleting(true); // Activa estado de eliminación
+      await deleteButterfly(id); // llama al servicio de eliminación - metodo delete en services
+      
+      // Usar successAlert en lugar de alert nativo
+      await successAlert({
+        title: "¡Eliminada!",
+        message: `La mariposa "${butterfly.name}" ha sido eliminada correctamente.`
+      });
+      
       navigate("/butterflygrid");
-    } catch {
-      alert(
-        "Hubo un error al eliminar la mariposa. Por favor intántalo de nuevo."
-      );
+    } catch (error) {
+      // Usar errorAlert en lugar de alert nativo
+      errorAlert({
+        title: "Error al eliminar",
+        message: "Hubo un error al eliminar la mariposa. Por favor inténtalo de nuevo."
+      });
     } finally {
-      setDeleting(false); //Desactiva el estado de eliminación
+      setDeleting(false); // Desactiva el estado de eliminación
     }
   };
 
@@ -67,6 +80,11 @@ const ButterflyDetail = () => {
         setError(null);
       } catch (error) {
         setError(`Error cargando la mariposa: ${error.message}`);
+        // Opcional: También puedes mostrar una alerta de error aquí
+        errorAlert({
+          title: "Error de carga",
+          message: `No se pudo cargar la información de la mariposa: ${error.message}`
+        });
       } finally {
         setLoading(false);
       }
@@ -74,6 +92,13 @@ const ButterflyDetail = () => {
 
     fetchData();
   }, [id]); // Se ejecuta cuando cambia el ID
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []); // Se ejecuta al montar el componente
 
   //gestionar los estados de carga y error
   if (loading) {
@@ -90,36 +115,41 @@ const ButterflyDetail = () => {
     <>
       <section className="mx-8">
         <TitleSection title={`Ficha de ${butterfly.name}`} />
-        <div className="relative mb-6">
+        <div className="relative mb-6 flex justify-center">
           <img
             src={butterfly.imageUrl}
             alt={butterfly.imageAlt}
-            className="w-full rounded-[20px]"
+            className="max-w-xs sm:max-w-md lg:max-w-xl w-full h-auto rounded-[20px]"
           />
         </div>
-        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Nombre científico:</span>{" "}
-          <span className="italic">{butterfly.sciname}</span>
-        </p>
-        <p className="text-mint-green-700 mb-2 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Periodo de Actividad:</span>{" "}
-          <span>{getActivityText(butterfly.activity)}</span>
-        </p>
-        <p className="text-mint-green-700 mb-4 text-xl sm:text-xl font-segoe">
-          <span className="font-bold">Estado de Conservación:</span>{" "}
-          <span>{getStatusText(butterfly.status)}</span>
-        </p>
-        <p className="text-mint-green-700 mb-1 text-xl sm:text-xl font-segoe">
-          {butterfly.longDescription}
-        </p>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Nombre Científico:</span>{" "}
+            <span className="italic">{butterfly.sciname}</span>
+          </p>
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Periodo de Actividad:</span>{" "}
+            <span>{getActivityText(butterfly.activity)}</span>
+          </p>
+          <p className="text-mint-green-700 mb-2 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Estado de Conservación:</span>{" "}
+            <span>{getStatusText(butterfly.status)}</span>
+          </p>
+          <p className="text-mint-green-700 mb-4 text-sm lg:text-lg font-segoe">
+            <span className="font-bold">Localización:</span>{" "}
+            <span>{butterfly.location}</span>
+          </p>
+          <p className="text-mint-green-700 mb-1 text-sm lg:text-lg font-segoe">
+            {butterfly.longDescription}
+          </p>
+        </div>
         <div className="flex justify-center my-8">
-          <Buttons 
+          <Buttons
             styleType="primary"
             text="Editar Ficha"
             className="mt-8 ml-6"
-            linkTo={`/editbutterfly:id`}
-          />
-          <Buttons //Componente botón de Mariany
+            linkTo={`/editbutterfly/${butterfly.id}`}/>
+          <Buttons
             styleType="secondary"
             text={deleting ? "Eliminando..." : "Eliminar"}
             className="mt-8 ml-6"
