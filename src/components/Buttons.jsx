@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 function Buttons({ styleType = "primary", text, className = "", onClick, linkTo }) {
-    const base = "py-3 px-6 rounded-lg font-segoe font-semibold cursor-pointer border-2 outline transition-colors duration-200 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200";
+    const base = "py-3 px-6 rounded-lg font-segoe font-semibold cursor-pointer border-2 outline transition duration-200 shadow-md hover:shadow-lg hover:scale-105";
     const styles = {
         primary: (extra = "") => `bg-lime-green text-mint-green-700 border-mint-green-600  hover:bg-lime-green/80 ${extra}`,
         secondary: (extra = "") => `bg-white text-mint-green-700 border-mint-green-600 hover:brightness-90 ${extra}`,

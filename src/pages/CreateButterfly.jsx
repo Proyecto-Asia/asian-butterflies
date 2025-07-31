@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import CreateForm from "../components/CreateForm.jsx";
+import CreateForm from "../components/CreateForm";
 import { createNewButterfly } from "../services/ButterflyServices";
 import TitleSection from "../components/TitleSection";
 import { confirmAlert, successAlert, errorAlert } from "../components/Alerts";
+import { getAllButterflies } from "../services/ButterflyServices";
 
 
 const CreateButterfly = () => {
@@ -31,11 +32,7 @@ const CreateButterfly = () => {
     const fetchCountryData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:3000/butterfly");
-        if (!response.ok) {
-          throw new Error('Error al cargar los datos');
-        }
-        const countryData = await response.json();
+        const countryData = await getAllButterflies();
         setData(countryData);
         console.log("Datos cargados:", countryData);
       } catch (error) {
@@ -82,10 +79,10 @@ const CreateButterfly = () => {
   // Validar que todos los campos estén completos
   const validateForm = () => {
     const requiredFields = [
-      'name', 'sciname', 'shortDescription', 'longDescription', 
+      'name', 'sciname', 'shortDescription', 'longDescription',
       'activity', 'status', 'region', 'location', 'imageUrl'
     ];
-    
+
     for (const field of requiredFields) {
       if (!newButterfly[field] || newButterfly[field].trim() === '') {
         return false;
@@ -137,17 +134,17 @@ const CreateButterfly = () => {
     try {
       setSubmitting(true);
       await createNewButterfly(newButterfly);
-      
+
       // Mostrar alerta de éxito
       await successAlert({
         title: "¡Mariposa creada!",
         message: `La mariposa "${newButterfly.name}" ha sido añadida exitosamente a la colección.`
       });
-      
+
       // Resetear formulario y navegar
       resetForm();
       navigate("/butterflygrid");
-      
+
     } catch (error) {
       console.error("Error al crear mariposa:", error);
       errorAlert({
@@ -164,7 +161,7 @@ const CreateButterfly = () => {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="text-mint-green-700 text-lg font-segoe">
-          Cargando datos... 
+          Cargando datos...
         </div>
       </div>
     );
