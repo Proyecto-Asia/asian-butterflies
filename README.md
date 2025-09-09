@@ -95,7 +95,7 @@ git clone https://github.com/TU_USUARIO/asian-butterflies.git
 cd asian-butterflies
 npm install
 
-npm run api     # iniciar JSON Server en http://localhost:3000
+npm run api-fake     # iniciar JSON Server en http://localhost:3000
 npm run dev     # iniciar app React en http://localhost:5173
 ```
 ---
